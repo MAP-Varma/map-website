@@ -1679,6 +1679,32 @@ h3 {
         opacity: 0.72;
     }
 
+    .hero-play span,
+    .hero-play svg {
+        opacity: 0.38;
+    }
+
+    .hero.is-revealed .hero-play span,
+    .hero.is-revealed .hero-play svg {
+        opacity: 0.18;
+    }
+
+    .hero-statement {
+        padding: 0 18px;
+    }
+
+    .hero-statement p {
+        font-size: clamp(30px, 9.2vw, 38px);
+    }
+
+    .hero-statement > p:not(.hero-statement-sub) {
+        white-space: nowrap;
+    }
+
+    .hero-statement h2 {
+        font-size: clamp(48px, 15vw, 62px);
+    }
+
     .video-card {
         flex-basis: 100%;
     }

@@ -231,7 +231,8 @@
             }
 
             const rect = heroScrollContainer.getBoundingClientRect();
-            return rect.top <= 2 && rect.bottom > window.innerHeight * 0.55;
+            const triggerTop = Math.max(2, window.innerHeight * 0.28);
+            return rect.top <= triggerTop && rect.bottom > window.innerHeight * 0.45;
         }
 
         function updateHeroSlide(direction, event) {
