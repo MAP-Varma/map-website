@@ -219,28 +219,45 @@
 
     <script>
         const hero = document.querySelector(".hero");
+        const heroScrollContainer = document.querySelector(".hero-scroll-container");
         const heroIcons = document.querySelectorAll(".hero-play > *");
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        let heroSlideLocked = false;
+        let heroTouchStartY = null;
 
-        function updateHeroScroll() {
-            if (!hero) {
-                return;
+        function isInsideHeroIntro() {
+            if (!heroScrollContainer) {
+                return false;
             }
 
-            const progress = Math.min(1, Math.max(0, window.scrollY / Math.max(1, hero.offsetHeight)));
-            const statementEnter = Math.min(1, Math.max(0, (progress - 0.28) / 0.10));
-            const statementOpacity = Math.min(1, Math.max(0, (progress - 0.28) / 0.04));
-            const statementOffset = (1 - statementEnter) * Math.min(window.innerWidth * 0.72, 920);
-            hero.style.setProperty("--scroll", progress.toFixed(3));
-            hero.style.setProperty("--statement-enter", (0.5 + statementOpacity * 0.5).toFixed(3));
-            hero.style.setProperty("--statement-left", `${-statementOffset.toFixed(1)}px`);
-            hero.style.setProperty("--statement-right", `${statementOffset.toFixed(1)}px`);
-            hero.style.setProperty("--dot-one-x", `${18 + progress * 10}%`);
-            hero.style.setProperty("--dot-two-x", `${78 - progress * 8}%`);
-            hero.style.setProperty("--dot-three-y", `${76 - progress * 18}%`);
-            hero.style.setProperty("--spark-y", `${progress * 34}px`);
-            hero.style.setProperty("--spark-rot", `${progress * 1.5}deg`);
-            hero.style.setProperty("--play-y", `${progress * -18}px`);
-            hero.style.setProperty("--play-rot", `${progress * -1.5}deg`);
+            const rect = heroScrollContainer.getBoundingClientRect();
+            return rect.top <= 2 && rect.bottom > window.innerHeight * 0.55;
+        }
+
+        function updateHeroSlide(direction, event) {
+            if (!hero || prefersReducedMotion || !isInsideHeroIntro()) {
+                return false;
+            }
+
+            const isRevealed = hero.classList.contains("is-revealed");
+
+            if (direction > 0 && !isRevealed) {
+                event.preventDefault();
+                hero.classList.add("is-revealed");
+                heroSlideLocked = true;
+            } else if (direction < 0 && isRevealed && window.scrollY <= 4) {
+                event.preventDefault();
+                hero.classList.remove("is-revealed");
+                heroSlideLocked = true;
+            } else {
+                return false;
+            }
+
+            window.setTimeout(() => {
+                heroSlideLocked = false;
+            }, 980);
+
+            return true;
         }
 
         const iconMotion = Array.from(heroIcons, (icon) => ({
@@ -336,8 +353,43 @@
             motionFrame = hasMovement ? requestAnimationFrame(updateIconMotion) : null;
         }
 
-        updateHeroScroll();
-        window.addEventListener("scroll", updateHeroScroll, { passive: true });
+        window.addEventListener("wheel", (event) => {
+            if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) {
+                return;
+            }
+
+            if (heroSlideLocked) {
+                event.preventDefault();
+                return;
+            }
+
+            updateHeroSlide(event.deltaY, event);
+        }, { passive: false });
+
+        window.addEventListener("touchstart", (event) => {
+            heroTouchStartY = event.touches.length === 1 ? event.touches[0].clientY : null;
+        }, { passive: true });
+
+        window.addEventListener("touchmove", (event) => {
+            if (heroTouchStartY === null || event.touches.length !== 1) {
+                return;
+            }
+
+            const deltaY = heroTouchStartY - event.touches[0].clientY;
+
+            if (Math.abs(deltaY) < 10) {
+                return;
+            }
+
+            if (heroSlideLocked) {
+                event.preventDefault();
+                return;
+            }
+
+            if (updateHeroSlide(deltaY, event)) {
+                heroTouchStartY = null;
+            }
+        }, { passive: false });
 
         function setupVideoSlider(slider) {
             const videoSlider = slider.querySelector(".video-grid");
@@ -370,7 +422,7 @@
 
         document.querySelectorAll(".video-slider").forEach(setupVideoSlider);
 
-        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        if (!prefersReducedMotion) {
             hero.addEventListener("pointermove", moveIconsFromPointer);
             hero.addEventListener("pointerleave", resetIconPositions);
 

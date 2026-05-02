@@ -183,22 +183,10 @@ section[id] {
 
 .hero-scroll-container {
     position: relative;
-    height: 150vh;
+    height: 100vh;
 }
 
 .hero {
-    --scroll: 0;
-    --dot-one-x: 18%;
-    --dot-two-x: 78%;
-    --dot-three-y: 76%;
-    --spark-y: 0px;
-    --spark-rot: 0deg;
-    --wave-y: 0px;
-    --play-y: 0px;
-    --play-rot: 0deg;
-    --statement-enter: 0;
-    --statement-left: -70vw;
-    --statement-right: 70vw;
     position: sticky;
     top: 0;
     z-index: 1;
@@ -211,7 +199,9 @@ section[id] {
     padding: 100px clamp(22px, 6vw, 82px) 100px;
     color: var(--white);
     background: linear-gradient(135deg, #3D2566 0%, #6B2D6B 40%, #EF4C79 100%);
+    contain: paint;
     overflow: hidden;
+    transform: translateZ(0);
 }
 
 .hero::before {
@@ -221,8 +211,9 @@ section[id] {
     background:
         radial-gradient(circle, rgba(255, 255, 255, 0.14) 0 2px, transparent 3px) 0 0 / 118px 92px;
     opacity: 0.16;
-    transform: translateY(var(--spark-y)) rotate(var(--spark-rot));
-    transition: transform 80ms linear;
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    transition: transform 980ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
 }
 
 .hero::after {
@@ -247,7 +238,10 @@ section[id] {
     text-align: center;
     text-transform: uppercase;
     filter: drop-shadow(0 0 48px rgba(160, 100, 255, 0.35));
-    opacity: calc(1 - var(--scroll) * 6);
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    transition: opacity 420ms cubic-bezier(0.22, 1, 0.36, 1), transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
 }
 
 .hero-statement {
@@ -262,8 +256,10 @@ section[id] {
     text-align: center;
     text-transform: none;
     pointer-events: none;
-    opacity: calc((var(--scroll) - 0.1) * 8);
-    transform: translateY(calc((1 - var(--scroll) * 4) * 24px + 34px));
+    opacity: 0;
+    transform: translate3d(0, 58px, 0);
+    transition: opacity 740ms cubic-bezier(0.22, 1, 0.36, 1), transform 980ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
 }
 
 .hero-statement p {
@@ -276,8 +272,9 @@ section[id] {
 }
 
 .hero-statement > p:not(.hero-statement-sub) {
-    opacity: var(--statement-enter);
-    transform: translateX(var(--statement-left));
+    opacity: 0;
+    transform: translate3d(-70vw, 0, 0);
+    transition: opacity 620ms cubic-bezier(0.22, 1, 0.36, 1) 170ms, transform 980ms cubic-bezier(0.22, 1, 0.36, 1);
     will-change: opacity, transform;
 }
 
@@ -304,9 +301,38 @@ section[id] {
     text-shadow:
         0 0 20px rgba(239, 76, 121, 0.4),
         0 0 50px rgba(239, 76, 121, 0.2);
-    opacity: var(--statement-enter);
-    transform: translateX(var(--statement-right));
+    opacity: 0;
+    transform: translate3d(70vw, 0, 0);
+    transition: opacity 620ms cubic-bezier(0.22, 1, 0.36, 1) 170ms, transform 980ms cubic-bezier(0.22, 1, 0.36, 1);
     will-change: opacity, transform;
+}
+
+.hero.is-revealed::before {
+    transform: translate3d(0, 34px, 0) rotate(1.5deg);
+}
+
+.hero.is-revealed .hero-play {
+    transform: translate3d(0, -18px, 0) rotate(-1.5deg);
+}
+
+.hero.is-revealed .hero-kicker {
+    opacity: 0;
+    transform: translate3d(0, -18px, 0) scale(0.985);
+}
+
+.hero.is-revealed .hero-statement {
+    opacity: 1;
+    transform: translate3d(0, 18px, 0);
+}
+
+.hero.is-revealed .hero-statement > p:not(.hero-statement-sub) {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+.hero.is-revealed .hero-statement h2 {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
 }
 
 .hero-actions {
@@ -452,8 +478,9 @@ section[id] {
     inset: 0;
     z-index: 1;
     pointer-events: none;
-    transform: translateY(var(--play-y)) rotate(var(--play-rot));
-    transition: transform 80ms linear;
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    transition: transform 980ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
 }
 
 .hero-play span {
@@ -766,8 +793,12 @@ section[id] {
     .route-grid.is-visible .route,
     .route-button:hover,
     .route-button:hover::after,
+    .hero::before,
+    .hero-kicker,
+    .hero-statement,
     .hero-statement > p:not(.hero-statement-sub),
     .hero-statement h2,
+    .hero-play,
     .hero-play span,
     .hero-play svg,
     .hero-ribbon::before,
