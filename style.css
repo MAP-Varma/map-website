@@ -1926,14 +1926,14 @@ h3 {
     min-height: 158px;
     padding: 16px 8px;
     border: 0;
-    border-radius: 8px;
+    border-radius: 0 0 0 0;
     color: var(--white);
     background: transparent;
     box-shadow: none;
     cursor: pointer;
     font-family: var(--font-body);
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 150;
     line-height: 1;
     transition: transform 280ms cubic-bezier(0.4, 0, 0.2, 1), filter 180ms ease, box-shadow 180ms ease;
 }
@@ -1943,24 +1943,9 @@ h3 {
     text-orientation: mixed;
 }
 
-.series-tab:hover {
-    background: rgba(255, 255, 255, 0.12);
-    box-shadow: none;
-}
-
 .series-tab:focus-visible {
     outline: 3px solid rgba(255, 255, 255, 0.92);
     outline-offset: 3px;
-}
-
-.series-tab-map {
-    left: 0;
-    border-radius: 8px 0 0 8px;
-}
-
-.series-tab-mapx {
-    right: 0;
-    border-radius: 0 8px 8px 0;
 }
 
 .series-panel {
@@ -1969,9 +1954,9 @@ h3 {
     max-height: 0;
     margin-top: 0;
     padding: 0 24px;
-    overflow: hidden;
+    overflow: visible;
     visibility: hidden;
-    border-radius: 8px;
+    border-radius: 8px 0 0 8px;
     color: var(--white);
     opacity: 0;
     transform: translateY(-10px);
@@ -1979,31 +1964,56 @@ h3 {
     transition:
         max-height 300ms cubic-bezier(0.4, 0, 0.2, 1),
         opacity 280ms cubic-bezier(0.4, 0, 0.2, 1),
-        transform 300ms cubic-bezier(0.4, 0, 0.2, 1),
         padding 300ms cubic-bezier(0.4, 0, 0.2, 1),
-        margin 300ms cubic-bezier(0.4, 0, 0.2, 1);
+        margin 300ms cubic-bezier(0.4, 0, 0.2, 1),
+        filter 200ms ease;
+}
+
+.pricing-card-shell:not(.is-series-open):hover .series-panel {
+  filter: brightness(1.08);
+}
+
+.pricing-card-shell.is-series-open .series-panel {
+  filter: none;
+  transform: translateY(0);
 }
 
 .series-panel-content {
     position: relative;
     z-index: 1;
     box-shadow: 0 22px 52px rgba(67, 38, 108, 0.18);
+    transition: transform 200ms ease, filter 200ms ease;
+}
+
+.pricing-card-shell:not(.is-series-open):hover .series-panel-content {
+  transform: translateY(-4px);
+  filter: brightness(1.08);
 }
 
 .series-panel-map {
+    border-radius: 8px 0 0 0 !important;
     background: linear-gradient(145deg, #EF4C79 0%, #B72F75 100%);
+
 }
 
 .series-panel-mapx {
+    border-radius: 0 8px 8px 0 !important;
     background: linear-gradient(145deg, #42B6BD 0%, #257C91 100%);
+    
 }
 
-.series-panel-map .series-tab,
 .series-panel-map .series-panel-content {
     background: transparent;
 }
 
-.series-panel-mapx .series-tab,
+.series-panel-map .series-tab {
+  border-radius: 8px 0 0 8px;
+}
+
+.series-panel-mapx .series-tab {
+  border-radius: 0 8px 8px 0;
+}
+
 .series-panel-mapx .series-panel-content {
     background: transparent;
 }
@@ -2688,7 +2698,7 @@ h3 {
     padding: clamp(34px, 5vw, 54px) clamp(28px, 5vw, 58px) clamp(56px, 7vw, 84px);
     border: 0;
     background: linear-gradient(145deg, #2f1b53 0%, #412B6C 48%, #5a317b 100%);
-    clip-path: polygon(0 4%, 96% 0, 100% 18%, 96% 100%, 7% 98%, 0 90%);
+    clip-path: polygon(0 4%, 96% 0, 100% 14%, 96% 100%, 7% 98%, 0 92%);
     box-shadow: 0 22px 54px rgba(65, 43, 108, 0.18);
 }
 
@@ -3083,7 +3093,7 @@ h3 {
     }
 
     .legal-content .about-vision {
-        clip-path: polygon(0 0, 96% 0, 100% 15%, 96% 100%, 7% 98%, 0 92%);
+        clip-path: polygon(0 0, 96% 0, 100% 14%, 96% 100%, 7% 98%, 0 92%);
     }
 
 }
