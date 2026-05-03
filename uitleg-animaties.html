@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uitleg animaties | Mijn Animatie Paspoort</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html">
+            <img src="logo.svg" alt="Mijn Animatie Paspoort">
+        </a>
+
+        <nav class="nav" id="site-nav" aria-label="Hoofdnavigatie">
+            <a href="persoonlijke-animaties.html">Persoonlijke animaties (MAP)</a>
+            <a class="is-active nav-mapx" href="uitleg-animaties.html">Uitleg animaties (MAP-X)</a>
+            <a href="index.html#voorbeelden">Voorbeelden</a>
+            <a href="over-mij.html">Over mij</a>
+            <a href="tarieven.html">Tarieven</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+            <a class="header-button header-button-ghost" href="contact.html">Plan een gesprek</a>
+            <a class="header-button header-button-primary" href="contact.html">Vraag een animatie aan</a>
+            <button class="menu-button" type="button" aria-label="Menu" aria-controls="site-nav" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="legal-page">
+        <section class="legal-hero">
+            <p class="section-label">MAP-X</p>
+            <h1>Uitleg animaties</h1>
+            <p>Maak trainingen, visies, methodieken en werkwijzen helder en menselijk.</p>
+        </section>
+
+        <section class="legal-content" aria-label="MAP-X">
+            <article>
+                <h2>Voor teams en partners</h2>
+                <p>MAP-X helpt organisaties om inhoud begrijpelijk, professioneel en toegankelijk over te brengen. Denk aan uitleg voor clienten, medewerkers, teams of samenwerkingspartners.</p>
+            </article>
+
+            <article>
+                <h2>Wanneer animatie helpt</h2>
+                <p>Animatie werkt goed bij complexe informatie, abstracte methodieken en verhalen waarin toon belangrijk is. Beeld en beweging maken de kern sneller duidelijk en beter te onthouden.</p>
+            </article>
+
+            <article>
+                <h2>Samen ontwikkelen</h2>
+                <p>We vertalen jullie inhoud naar een script, visuele stijl en animatievorm die past bij de doelgroep. Het proces blijft overzichtelijk, met vaste momenten voor afstemming en feedback.</p>
+            </article>
+
+            <article>
+                <h2>Start een MAP-X traject</h2>
+                <p><a href="contact.html">Plan een gesprek</a> om te onderzoeken welke animatievorm past bij jullie vraag.</p>
+            </article>
+        </section>
+    </main>
+
+    <script>
+        const siteHeader = document.querySelector(".site-header");
+        const menuButton = document.querySelector(".menu-button");
+        const navLinks = document.querySelectorAll(".nav a");
+
+        function setMenuOpen(isOpen) {
+            if (!siteHeader || !menuButton) {
+                return;
+            }
+
+            siteHeader.classList.toggle("is-menu-open", isOpen);
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+        }
+
+        if (menuButton) {
+            menuButton.addEventListener("click", () => {
+                setMenuOpen(!siteHeader.classList.contains("is-menu-open"));
+            });
+        }
+
+        navLinks.forEach((link) => {
+            link.addEventListener("click", () => setMenuOpen(false));
+        });
+    </script>
+</body>
+</html>

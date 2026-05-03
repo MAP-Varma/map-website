@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algemene voorwaarden | Mijn Animatie Paspoort</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html">
+            <img src="logo.svg" alt="Mijn Animatie Paspoort">
+        </a>
+
+        <nav class="nav" id="site-nav" aria-label="Hoofdnavigatie">
+            <a href="persoonlijke-animaties.html">Persoonlijke animaties (MAP)</a>
+            <a class="nav-mapx" href="uitleg-animaties.html">Uitleg animaties (MAP-X)</a>
+            <a href="index.html#voorbeelden">Voorbeelden</a>
+            <a href="over-mij.html">Over mij</a>
+            <a href="tarieven.html">Tarieven</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+            <a class="header-button header-button-ghost" href="contact.html">Plan een gesprek</a>
+            <a class="header-button header-button-primary" href="contact.html">Vraag een animatie aan</a>
+            <button class="menu-button" type="button" aria-label="Menu" aria-controls="site-nav" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="legal-page">
+        <section class="legal-hero">
+            <p class="section-label">Mijn Animatie Paspoort</p>
+            <h1>Algemene voorwaarden</h1>
+            <p>Laatst bijgewerkt: 2 mei 2026</p>
+        </section>
+
+        <section class="legal-content" aria-label="Algemene voorwaarden">
+            <article>
+                <h2>1. Toepassing</h2>
+                <p>Deze algemene voorwaarden gelden voor alle offertes, opdrachten en overeenkomsten van Mijn Animatie Paspoort, tenzij schriftelijk anders is afgesproken.</p>
+            </article>
+
+            <article>
+                <h2>2. Offertes en afspraken</h2>
+                <p>Een offerte is gebaseerd op de informatie die vooraf beschikbaar is. Als de opdracht verandert, bijvoorbeeld door extra correctierondes, aanvullend materiaal of een andere planning, kunnen kosten en levertijd worden aangepast in overleg.</p>
+            </article>
+
+            <article>
+                <h2>3. Aanlevering van materiaal</h2>
+                <p>De opdrachtgever zorgt ervoor dat teksten, verhalen, beeldmateriaal, logo's en andere benodigde informatie tijdig en bruikbaar worden aangeleverd. De opdrachtgever verklaart dat dit materiaal gebruikt mag worden voor de afgesproken animatie.</p>
+            </article>
+
+            <article>
+                <h2>4. Uitvoering en correcties</h2>
+                <p>Mijn Animatie Paspoort voert de opdracht zorgvuldig en naar beste inzicht uit. Correctierondes worden vooraf of tijdens de opdracht afgestemd. Wijzigingen buiten de afgesproken omvang kunnen apart worden gefactureerd.</p>
+            </article>
+
+            <article>
+                <h2>5. Betaling</h2>
+                <p>Facturen worden betaald binnen de termijn die op de factuur staat. Bij te late betaling kan de uitvoering of oplevering worden opgeschort totdat de betaling is ontvangen.</p>
+            </article>
+
+            <article>
+                <h2>6. Auteursrecht en gebruik</h2>
+                <p>Na volledige betaling mag de opdrachtgever de opgeleverde animatie gebruiken voor het afgesproken doel. Bronnen, werkbestanden, schetsen en tussenversies blijven eigendom van Mijn Animatie Paspoort, tenzij schriftelijk anders is overeengekomen.</p>
+            </article>
+
+            <article>
+                <h2>7. Publicatie en portfolio</h2>
+                <p>Wij kunnen opgeleverd werk opnemen in ons portfolio of als voorbeeld tonen, behalve wanneer vooraf schriftelijk is afgesproken dat dit niet mag of wanneer vertrouwelijkheid dat niet passend maakt.</p>
+            </article>
+
+            <article>
+                <h2>8. Annulering</h2>
+                <p>Bij annulering worden reeds uitgevoerde werkzaamheden en gemaakte kosten in rekening gebracht. Bij verplaatsing of pauzering van een opdracht maken we samen nieuwe afspraken over planning en eventuele gevolgen voor de kosten.</p>
+            </article>
+
+            <article>
+                <h2>9. Aansprakelijkheid</h2>
+                <p>Mijn Animatie Paspoort is niet aansprakelijk voor indirecte schade, gevolgschade of schade door onjuist aangeleverde informatie. De aansprakelijkheid is beperkt tot het bedrag dat voor de betreffende opdracht is betaald.</p>
+            </article>
+
+            <article>
+                <h2>10. Contact</h2>
+                <p>Vragen over deze voorwaarden kunnen worden gestuurd naar <a href="mailto:info@mijnanimatiepaspoort.nl">info@mijnanimatiepaspoort.nl</a>.</p>
+            </article>
+        </section>
+    </main>
+
+    <script>
+        const siteHeader = document.querySelector(".site-header");
+        const menuButton = document.querySelector(".menu-button");
+        const navLinks = document.querySelectorAll(".nav a");
+
+        function setMenuOpen(isOpen) {
+            if (!siteHeader || !menuButton) {
+                return;
+            }
+
+            siteHeader.classList.toggle("is-menu-open", isOpen);
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+        }
+
+        if (menuButton) {
+            menuButton.addEventListener("click", () => {
+                setMenuOpen(!siteHeader.classList.contains("is-menu-open"));
+            });
+        }
+
+        navLinks.forEach((link) => {
+            link.addEventListener("click", () => setMenuOpen(false));
+        });
+    </script>
+</body>
+</html>

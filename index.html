@@ -6,26 +6,29 @@
     <title>Mijn Animatie Paspoort</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Nunito:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
         <header class="site-header">
-            <a class="brand" href="#">
+            <a class="brand" href="index.html">
                 <img src="logo.svg" alt="Mijn Animatie Paspoort">
         </a>
 
-        <nav class="nav" aria-label="Hoofdnavigatie">
-            <a class="is-active" href="#wat-is-map">Wat is MAP?</a>
+        <nav class="nav" id="site-nav" aria-label="Hoofdnavigatie">
+            <a class="is-active" href="persoonlijke-animaties.html">Persoonlijke animaties (MAP)</a>
+            <a class="nav-mapx" href="uitleg-animaties.html">Uitleg animaties (MAP-X)</a>
             <a href="#voorbeelden">Voorbeelden</a>
-            <a class="nav-mapx" href="#map-x">MAP-X</a>
+            <a href="over-mij.html">Over mij</a>
+            <a href="tarieven.html">Tarieven</a>
+            <a href="contact.html">Contact</a>
         </nav>
 
         <div class="header-actions">
-            <a class="header-button header-button-ghost" href="#contact">Plan een gesprek</a>
-            <a class="header-button header-button-primary" href="#contact">Vraag een animatie aan</a>
-            <button class="menu-button" type="button" aria-label="Menu">
+            <a class="header-button header-button-ghost" href="contact.html">Plan een gesprek</a>
+            <a class="header-button header-button-primary" href="contact.html">Vraag een animatie aan</a>
+            <button class="menu-button" type="button" aria-label="Menu" aria-controls="site-nav" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -51,8 +54,8 @@
                 <h2>zichtbaar</h2>
                 <p class="hero-statement-sub">MAP vertaalt verhalen, herstel en ontwikkeling naar beeld, muziek en beweging. Zodat mensen zich beter begrepen voelen, en organisaties hun boodschap helder, menselijk en krachtig kunnen overbrengen.</p>
                 <div class="hero-actions" aria-label="Vervolgacties">
-                    <a class="button hero-button hero-button-primary" href="#contact">Ik wil mijn verhaal zichtbaar maken <span class="hero-button-arrow" aria-hidden="true"></span></a>
-                    <a class="button hero-button hero-button-examples" href="#aanbod">Bekijk voorbeelden</a>
+                    <a class="button hero-button hero-button-primary" href="contact.html">Ik wil mijn verhaal zichtbaar maken <span class="hero-button-arrow" aria-hidden="true"></span></a>
+                    <a class="button hero-button hero-button-examples" href="#voorbeelden">Bekijk voorbeelden</a>
                 </div>
             </div>
 
@@ -91,23 +94,23 @@
                     <h3>Persoonlijke Animatie</h3>
                     <p>Voor mensen die hun verhaal, ervaring of ontwikkeling zichtbaar willen maken.</p>
                     <ul>
-                        <li>Individuen, in zorg of niet</li>
-                        <li>Identiteit, groei en persoonlijke stappen</li>
+                        <li>Individuen (jij, partner, cliënten, in zorg of niet)</li>
+                        <li>Identiteit, groei, persoonlijke stappen</li>
                         <li>Jouw verhaal in beeld gebracht</li>
                     </ul>
-                    <a class="button route-button" href="#contact">Ontdek MAP</a>
+                    <a class="button route-button" href="persoonlijke-animaties.html">Ontdek MAP</a>
                 </article>
 
                 <article class="route route-x" id="map-x">
                     <span class="route-label">MAP-X</span>
-                    <h3>Animatie voor Organisaties</h3>
-                    <p>Voor organisaties die inhoud bedrijfsmatig willen inzetten: helder, menselijk en professioneel.</p>
+                    <h3>Uitleganimatie</h3>
+                    <p>Voor bijvoorbeeld organisaties die inhoud helder willen uitleggen: menselijk, professioneel en makkelijk te begrijpen.</p>
                     <ul>
                         <li>Trainingen, onboarding en interne uitleg</li>
                         <li>Visies, methodieken en werkwijzen</li>
-                        <li>Animaties voor cliënten, teams of partners</li>
+                        <li>Complexe inhoud eenvoudig en visueel uitgelegd</li>
                     </ul>
-                    <a class="button route-button" href="#contact">Ontdek MAP-X</a>
+                    <a class="button route-button" href="uitleg-animaties.html">Ontdek MAP-X</a>
                 </article>
             </div>
         </section>
@@ -209,8 +212,8 @@
 
             <div class="footer-bottom">
                 <nav class="footer-links" aria-label="Footer links">
-                    <a href="#">Privacyverklaring</a>
-                    <a href="#">Algemene voorwaarden</a>
+                    <a href="privacyverklaring.html">Privacyverklaring</a>
+                    <a href="algemene-voorwaarden.html">Algemene voorwaarden</a>
                 </nav>
                 <p>&copy; 2026 Mijn Animatie Paspoort</p>
             </div>
@@ -221,9 +224,31 @@
         const hero = document.querySelector(".hero");
         const heroScrollContainer = document.querySelector(".hero-scroll-container");
         const heroIcons = document.querySelectorAll(".hero-play > *");
+        const siteHeader = document.querySelector(".site-header");
+        const menuButton = document.querySelector(".menu-button");
+        const navLinks = document.querySelectorAll(".nav a");
         const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         let heroSlideLocked = false;
         let heroTouchStartY = null;
+
+        function setMenuOpen(isOpen) {
+            if (!siteHeader || !menuButton) {
+                return;
+            }
+
+            siteHeader.classList.toggle("is-menu-open", isOpen);
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+        }
+
+        if (menuButton) {
+            menuButton.addEventListener("click", () => {
+                setMenuOpen(!siteHeader.classList.contains("is-menu-open"));
+            });
+        }
+
+        navLinks.forEach((link) => {
+            link.addEventListener("click", () => setMenuOpen(false));
+        });
 
         function isInsideHeroIntro() {
             if (!heroScrollContainer) {
@@ -372,6 +397,11 @@
         }, { passive: true });
 
         window.addEventListener("touchmove", (event) => {
+            if (heroSlideLocked) {
+                event.preventDefault();
+                return;
+            }
+
             if (heroTouchStartY === null || event.touches.length !== 1) {
                 return;
             }
@@ -379,11 +409,6 @@
             const deltaY = heroTouchStartY - event.touches[0].clientY;
 
             if (Math.abs(deltaY) < 10) {
-                return;
-            }
-
-            if (heroSlideLocked) {
-                event.preventDefault();
                 return;
             }
 
