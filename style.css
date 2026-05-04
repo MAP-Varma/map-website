@@ -1186,6 +1186,63 @@ h3 {
     margin-top: clamp(46px, 7vw, 82px);
 }
 
+/* =====================
+   Filmstrip
+   (buiten = strips met perforaties boven/onder, binnen = achtergrond achter de video's)
+   ===================== */
+
+/* Filmstrip — binnenkant */
+.video-row--personal .video-slider-button {
+    top: 48%;
+}
+
+.video-row--personal .video-slider {
+    padding: 90px clamp(22px, 6vw, 82px) 42px;
+    margin-inline: calc(-1 * clamp(22px, 6vw, 82px));
+    background: linear-gradient(to right, #c33f6d, #ee588b 50%, #c33f6d);
+}
+
+.video-row--personal .video-grid {
+    background: transparent;
+    scrollbar-color: rgba(255, 255, 255, 0.4) transparent;
+}
+
+.video-row--personal .video-thumb {
+    box-shadow: none;
+    outline: 3px solid #fff;
+}
+
+.video-row--personal .video-card strong {
+    color: #fff;
+    font-size: clamp(13px, 1.1vw, 15px);
+}
+
+.video-row--personal .video-meta {
+    color: #fff;
+}
+
+
+/* Filmstrip — buitenkant (strips met witte perforaties boven en onder) */
+.video-row--personal .video-slider::before,
+.video-row--personal .video-slider::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 48px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='48'%3E%3Crect x='9' y='11' width='26' height='26' rx='3' ry='3' fill='white'/%3E%3C/svg%3E");
+    background-size: 44px 48px;
+    background-repeat: repeat-x;
+}
+
+.video-row--personal .video-slider::before {
+    top: 0;
+}
+
+.video-row--personal .video-slider::after {
+    bottom: 0;
+}
+
 .video-row-header {
     max-width: 720px;
     margin-bottom: 24px;
@@ -1313,7 +1370,7 @@ h3 {
 
 .video-card strong {
     color: #1A0A2E;
-    font-size: clamp(18px, 1.7vw, 24px);
+    font-size: clamp(14px, 1.3vw, 18px);
     font-weight: 600;
     line-height: 1.15;
 }
@@ -2062,6 +2119,8 @@ h3 {
 .series-panel-content {
     position: relative;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
     box-shadow: 0 22px 52px rgba(67, 38, 108, 0.18);
     transition: transform 200ms ease, filter 200ms ease;
 }
@@ -2120,6 +2179,10 @@ h3 {
 
 .series-panel ul,
 .series-mobile-card ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-grow: 1;
     margin: 16px 0;
     padding: 0;
     list-style: none;
@@ -2127,32 +2190,42 @@ h3 {
 
 .series-panel li,
 .series-mobile-card li {
-    position: relative;
-    padding-left: 18px;
-    color: rgba(255, 255, 255, 0.94);
+    padding: 7px 14px;
     font-size: 15px;
     line-height: 1.45;
+    text-align: center;
+    background: #ffffff;
+    border-radius: 6px;
+}
+
+.series-panel-map li,
+.series-mobile-card-map li {
+    color: #ef4c79;
+    font-weight: 600;
+}
+
+.series-panel-mapx li,
+.series-mobile-card-mapx li {
+    color: #42b6bd;
+    font-weight: 600;
 }
 
 .series-panel li + li,
 .series-mobile-card li + li {
-    margin-top: 8px;
+    margin-top: 0;
 }
 
-.series-panel li::before,
-.series-mobile-card li::before {
-    content: "";
-    position: absolute;
-    top: 0.62em;
-    left: 0;
-    width: 6px;
-    height: 6px;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.8);
+.series-panel-map li::before,
+.series-mobile-card-map li::before,
+.series-panel-mapx li::before,
+.series-mobile-card-mapx li::before {
+    content: none;
 }
 
 .series-panel .series-panel-note,
 .series-mobile-card p:last-child {
+    margin-top: auto;
+    padding-top: 18px;
     color: rgba(255, 255, 255, 0.82);
     font-size: 13px;
     line-height: 1.5;
