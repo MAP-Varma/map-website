@@ -1212,8 +1212,8 @@ h3 {
 }
 
 .video-row--personal .video-thumb {
+    --video-thumb-outline-width: 3px;
     box-shadow: none;
-    outline: 3px solid #fff;
 }
 
 .video-row--personal .video-card strong {
@@ -1264,8 +1264,8 @@ h3 {
 }
 
 .video-row--mapx .video-thumb {
+    --video-thumb-outline-width: 3px;
     box-shadow: none;
-    outline: 3px solid #fff;
 }
 
 .video-row--mapx .video-card strong {
@@ -1326,7 +1326,7 @@ h3 {
     gap: var(--video-gap);
     overflow-x: auto;
     overflow-y: hidden;
-    padding: 4px 2px 18px;
+    padding: 10px 2px 18px;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
     scrollbar-width: thin;
@@ -1377,6 +1377,16 @@ h3 {
     box-shadow: 0 24px 70px rgba(61, 37, 102, 0.16);
 }
 
+.video-thumb::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border: var(--video-thumb-outline-width, 0) solid #fff;
+    border-radius: inherit;
+    pointer-events: none;
+}
+
 .video-thumb img {
     width: 100%;
     height: 100%;
@@ -1391,6 +1401,7 @@ h3 {
 
 .video-play {
     position: absolute;
+    z-index: 2;
     left: 50%;
     top: 50%;
     width: 64px;
@@ -3463,7 +3474,13 @@ h3 {
     }
 
     .video-card {
-        flex-basis: 100%;
+        flex-basis: 88%;
+        max-width: 360px;
+    }
+
+    .video-row--personal .video-thumb,
+    .video-row--mapx .video-thumb {
+        --video-thumb-outline-width: 2px;
     }
 
     .legal-content .about-highlight {
