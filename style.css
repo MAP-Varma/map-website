@@ -1762,6 +1762,50 @@ h3 {
     transform: translateY(-2px);
 }
 
+.mapx-hero {
+    background: linear-gradient(135deg, #243f65 0%, #28788f 48%, #42B6BD 100%);
+}
+
+.mapx-content .map-side-panel {
+    border-color: rgba(66, 182, 189, 0.24);
+    box-shadow: 0 18px 48px rgba(37, 124, 145, 0.1);
+}
+
+.mapx-content .map-side-panel article + article {
+    border-top-color: rgba(66, 182, 189, 0.2);
+}
+
+.mapx-content .map-process-panel h2,
+.mapx-content .map-side-panel h2 {
+    color: #3D2566;
+}
+
+.mapx-process-title {
+    margin-top: 0;
+}
+
+.mapx-content .map-process-panel .process-list li:nth-child(2) .process-heading {
+    align-items: center;
+}
+
+.mapx-content .process-number {
+    background: linear-gradient(180deg, #42B6BD 0%, #257C91 100%);
+    box-shadow: 0 10px 22px rgba(37, 124, 145, 0.2);
+}
+
+.mapx-content .mapx-process-note p {
+    color: #257C91;
+}
+
+.mapx-content .map-cta {
+    background: #257C91;
+}
+
+.mapx-content .map-cta a:hover {
+    color: #c6fbff;
+    text-decoration-color: #c6fbff;
+}
+
 .legal-content strong {
     color: #3D2566;
     font-weight: 600;
@@ -1796,6 +1840,10 @@ h3 {
     background: #EF4C79;
 }
 
+.mapx-content .legal-list li::before {
+    background: linear-gradient(180deg, #42B6BD 0%, #257C91 100%);
+}
+
 .pricing-content {
     width: min(100% - 44px, 1180px);
 }
@@ -1817,22 +1865,39 @@ h3 {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: clamp(22px, 3vw, 34px);
-    align-items: start;
+    align-items: stretch;
 }
 
 .pricing-card-shell {
     position: relative;
+    display: flex;
+    flex-direction: column;
     min-width: 0;
     isolation: isolate;
     --series-panel-width: 360px;
-    --series-label-width: 42px;
+    --series-label-width: 50px;
     --series-tab-height: 220px;
-    --series-strip-width: 16px;
+    --series-strip-width: 25px;
+}
+
+.pricing-card-shell::after {
+    content: "";
+    position: absolute;
+    z-index: 4;
+    top: calc(10% + 28px);
+    display: none;
+    width: 12px;
+    height: 12px;
+    border-top: 3px solid currentColor;
+    border-right: 3px solid currentColor;
+    pointer-events: none;
+    opacity: 0;
 }
 
 .pricing-card-shell .pricing-card {
     position: relative;
     z-index: 3;
+    flex: 1;
     min-height: 100%;
 }
 
@@ -1903,17 +1968,37 @@ h3 {
 }
 
 .pricing-list {
+    margin-bottom: 58px;
     font-size: 16px;
     line-height: 1.55;
 }
 
+.pricing-card-mapx .pricing-list li::before {
+    background: linear-gradient(180deg, #42B6BD 0%, #257C91 100%);
+}
+
 .pricing-card .pricing-note {
-    margin-top: 24px;
-    padding: 0 0 0 16px;
-    border-left: 3px solid rgba(61, 37, 102, 0.16);
+    position: relative;
+    margin-top: auto;
+    padding: 0 0 0 18px;
     color: #5f526f;
     font-size: 15px;
     line-height: 1.55;
+}
+
+.pricing-card:has(.pricing-note) {
+    padding-bottom: clamp(26px, 4vw, 38px);
+}
+
+.pricing-card .pricing-note::before {
+    content: "";
+    position: absolute;
+    top: 0.25em;
+    bottom: 0.25em;
+    left: 0;
+    width: 3px;
+    border-radius: 999px;
+    background: rgba(61, 37, 102, 0.16);
 }
 
 .series-tab {
@@ -1969,10 +2054,6 @@ h3 {
         filter 200ms ease;
 }
 
-.pricing-card-shell:not(.is-series-open):hover .series-panel {
-  filter: brightness(1.08);
-}
-
 .pricing-card-shell.is-series-open .series-panel {
   filter: none;
   transform: translateY(0);
@@ -1983,11 +2064,6 @@ h3 {
     z-index: 1;
     box-shadow: 0 22px 52px rgba(67, 38, 108, 0.18);
     transition: transform 200ms ease, filter 200ms ease;
-}
-
-.pricing-card-shell:not(.is-series-open):hover .series-panel-content {
-  transform: translateY(-4px);
-  filter: brightness(1.08);
 }
 
 .series-panel-map {
@@ -2087,6 +2163,30 @@ h3 {
 }
 
 @media (min-width: 1620px) {
+    .pricing-card-shell::after {
+        display: block;
+    }
+
+    .pricing-card-shell-map::after {
+        left: calc(-1 * (var(--series-label-width) + 18px));
+        color: var(--map);
+        animation: series-arrow-left 10s ease-in-out infinite;
+    }
+
+    .pricing-card-shell-mapx::after {
+        right: calc(-1 * (var(--series-label-width) + 18px));
+        color: var(--mapx);
+        animation: series-arrow-right 10s ease-in-out infinite;
+    }
+
+    .pricing-card-shell:hover::after,
+    .pricing-card-shell.is-series-open::after,
+    .pricing-card-shell.is-series-settling::after,
+    .pricing-card-shell.is-series-hover-paused::after {
+        animation: none;
+        opacity: 0;
+    }
+
     .series-panel {
         position: absolute;
         top: 10%;
@@ -2100,14 +2200,13 @@ h3 {
         visibility: visible;
         pointer-events: auto;
         transition:
-            clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1),
             opacity 280ms cubic-bezier(0.4, 0, 0.2, 1),
             transform 300ms cubic-bezier(0.4, 0, 0.2, 1),
             box-shadow 220ms ease;
     }
 
     .series-panel-map {
-        left: calc(-1 * var(--series-label-width));
+        left: calc(-1 * (var(--series-label-width) - 7px));
         transform: translateX(0);
         clip-path: polygon(
             0 0,
@@ -2120,7 +2219,7 @@ h3 {
     }
 
     .series-panel-mapx {
-        right: calc(-1 * var(--series-label-width));
+        right: calc(-1 * (var(--series-label-width) - 7px));
         transform: translateX(0);
         clip-path: polygon(
             calc(100% - var(--series-label-width)) 0,
@@ -2130,6 +2229,20 @@ h3 {
             calc(100% - var(--series-label-width) + var(--series-strip-width)) 100%,
             calc(100% - var(--series-label-width)) 100%
         );
+    }
+
+    .pricing-card-shell-map:not(.is-series-open):not(.is-series-settling):not(.is-series-hover-paused) .series-panel-map:hover {
+        filter: brightness(1.07);
+        transform: translateX(-7px);
+    }
+
+    .pricing-card-shell-mapx:not(.is-series-open):not(.is-series-settling):not(.is-series-hover-paused) .series-panel-mapx:hover {
+        filter: brightness(1.07);
+        transform: translateX(7px);
+    }
+
+    .pricing-card-shell.is-series-settling .series-panel {
+        filter: none;
     }
 
     .series-tab {
@@ -2182,7 +2295,18 @@ h3 {
     }
 
     .pricing-card-shell-map.is-series-open .series-panel-map {
-        transform: translateX(calc(-1 * (var(--series-panel-width) - var(--series-label-width))));
+        transform: translateX(calc(-1 * (var(--series-panel-width) - var(--series-label-width) + 7px)));
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 100%,
+            calc(var(--series-label-width) - var(--series-strip-width)) 100%,
+            calc(var(--series-label-width) - var(--series-strip-width)) var(--series-tab-height),
+            0 var(--series-tab-height)
+        );
+    }
+
+    .pricing-card-shell-map.is-series-closing .series-panel-map {
         clip-path: polygon(
             0 0,
             100% 0,
@@ -2194,7 +2318,18 @@ h3 {
     }
 
     .pricing-card-shell-mapx.is-series-open .series-panel-mapx {
-        transform: translateX(calc(var(--series-panel-width) - var(--series-label-width)));
+        transform: translateX(calc(var(--series-panel-width) - var(--series-label-width) + 7px));
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            100% var(--series-tab-height),
+            calc(100% - var(--series-label-width) + var(--series-strip-width)) var(--series-tab-height),
+            calc(100% - var(--series-label-width) + var(--series-strip-width)) 100%,
+            0 100%
+        );
+    }
+
+    .pricing-card-shell-mapx.is-series-closing .series-panel-mapx {
         clip-path: polygon(
             0 0,
             100% 0,
@@ -2208,6 +2343,50 @@ h3 {
     .pricing-card-shell.is-series-open .series-panel-content {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes series-arrow-left {
+    0%, 8%, 16%, 24%, 100% {
+        opacity: 0;
+        transform: translateX(0) rotate(225deg);
+    }
+
+    2%, 10%, 18% {
+        opacity: 0.62;
+        transform: translateX(0) rotate(225deg);
+    }
+
+    4%, 12%, 20% {
+        opacity: 0.9;
+        transform: translateX(-8px) rotate(225deg);
+    }
+
+    6%, 14%, 22% {
+        opacity: 0;
+        transform: translateX(-14px) rotate(225deg);
+    }
+}
+
+@keyframes series-arrow-right {
+    0%, 8%, 16%, 24%, 100% {
+        opacity: 0;
+        transform: translateX(0) rotate(45deg);
+    }
+
+    2%, 10%, 18% {
+        opacity: 0.62;
+        transform: translateX(0) rotate(45deg);
+    }
+
+    4%, 12%, 20% {
+        opacity: 0.9;
+        transform: translateX(8px) rotate(45deg);
+    }
+
+    6%, 14%, 22% {
+        opacity: 0;
+        transform: translateX(14px) rotate(45deg);
     }
 }
 
@@ -2268,20 +2447,24 @@ h3 {
 
     .series-mobile-grid {
         display: grid;
-        gap: 14px;
-        padding: 0 20px 22px;
+        gap: 18px;
+        padding: 12px 20px 30px;
     }
 
     .series-mobile-card {
-        padding: 20px;
+        padding: 26px 20px 24px;
         border-radius: 8px;
         color: var(--white);
         box-shadow: 0 14px 32px rgba(67, 38, 108, 0.13);
     }
 
     .legal-content .series-mobile-card {
-        padding: 20px;
+        padding: 26px 20px 24px;
         border-bottom: 0;
+    }
+
+    .legal-content .series-mobile-card-map {
+        padding-top: 36px;
     }
 
     .series-mobile-card-map {
@@ -2455,6 +2638,7 @@ h3 {
 }
 
 @media (prefers-reduced-motion: reduce) {
+    .pricing-card-shell::after,
     .pricing-options-inner,
     .pricing-options summary::after,
     .series-tab,
@@ -2462,6 +2646,7 @@ h3 {
     .series-panel-content,
     .pricing-options-row {
         transition: none;
+        animation: none;
     }
 }
 
@@ -2952,20 +3137,24 @@ h3 {
 
     .series-mobile-grid {
         display: grid;
-        gap: 14px;
-        padding: 0 20px 22px;
+        gap: 18px;
+        padding: 12px 20px 30px;
     }
 
     .series-mobile-card {
-        padding: 20px;
+        padding: 26px 20px 24px;
         border-radius: 8px;
         color: var(--white);
         box-shadow: 0 14px 32px rgba(67, 38, 108, 0.13);
     }
 
     .legal-content .series-mobile-card {
-        padding: 20px;
+        padding: 26px 20px 24px;
         border-bottom: 0;
+    }
+
+    .legal-content .series-mobile-card-map {
+        padding-top: 36px;
     }
 
     .series-mobile-card-map {

@@ -74,12 +74,12 @@
                         <p class="pricing-note">Compacte versie mogelijk vanaf €799 excl. btw, bij een korter verhaal met een eenvoudiger visuele uitwerking.</p>
                     </article>
 
-                    <aside class="series-panel series-panel-map" id="map-series-panel" aria-label="MAP-reeks">
+                    <aside class="series-panel series-panel-map" id="map-series-panel" aria-label="MAP pakketten">
                         <button class="series-tab series-tab-map" type="button" aria-expanded="false" aria-controls="map-series-panel">
                             <span>Pakket opties</span>
                         </button>
                         <div class="series-panel-content">
-                            <h3>MAP-reeks</h3>
+                            <h3>MAP pakketten</h3>
                             <p>Voor organisaties of trajecten waarin meerdere persoonlijke animaties worden gemaakt.</p>
                             <ul>
                                 <li>3 MAP-animaties vanaf €2.850 excl. btw</li>
@@ -118,12 +118,12 @@
                         <p class="pricing-note">Compacte versie mogelijk vanaf €999 excl. btw, bijvoorbeeld bij een korte uitleganimatie met beperkte afstemming.</p>
                     </article>
 
-                    <aside class="series-panel series-panel-mapx" id="mapx-series-panel" aria-label="MAP-X-reeks">
+                    <aside class="series-panel series-panel-mapx" id="mapx-series-panel" aria-label="MAP-X pakketten">
                         <button class="series-tab series-tab-mapx" type="button" aria-expanded="false" aria-controls="mapx-series-panel">
                             <span>Pakket opties</span>
                         </button>
                         <div class="series-panel-content">
-                            <h3>MAP-X-reeks</h3>
+                            <h3>MAP-X pakketten</h3>
                             <p>Voor meerdere uitleganimaties rond werkwijzen, diensten, methodieken, projecten of boodschappen.</p>
                             <ul>
                                 <li>3 MAP-X animaties vanaf €4.250 excl. btw</li>
@@ -140,7 +140,7 @@
                 <summary>Meerdere animaties nodig?</summary>
                 <div class="series-mobile-grid">
                     <article class="series-mobile-card series-mobile-card-map">
-                        <h3>MAP-reeks</h3>
+                        <h3>MAP pakketten</h3>
                         <p>Voor organisaties of trajecten waarin meerdere persoonlijke animaties worden gemaakt.</p>
                         <ul>
                             <li>3 MAP-animaties vanaf €2.850 excl. btw</li>
@@ -151,7 +151,7 @@
                     </article>
 
                     <article class="series-mobile-card series-mobile-card-mapx">
-                        <h3>MAP-X-reeks</h3>
+                        <h3>MAP-X pakketten</h3>
                         <p>Voor meerdere uitleganimaties rond werkwijzen, diensten, methodieken, projecten of boodschappen.</p>
                         <ul>
                             <li>3 MAP-X animaties vanaf €4.250 excl. btw</li>
@@ -270,14 +270,28 @@
 
         seriesToggles.forEach((button) => {
             const shell = button.closest(".pricing-card-shell");
+            let settlingTimer = null;
+
+            shell?.addEventListener("pointerleave", () => {
+                shell.classList.remove("is-series-hover-paused");
+            });
 
             button.addEventListener("click", () => {
                 if (!shell) {
                     return;
                 }
 
+                const wasOpen = shell.classList.contains("is-series-open");
+                window.clearTimeout(settlingTimer);
+                shell.classList.add("is-series-settling");
+                shell.classList.add("is-series-hover-paused");
+                shell.classList.toggle("is-series-closing", wasOpen);
                 const isOpen = shell.classList.toggle("is-series-open");
                 button.setAttribute("aria-expanded", String(isOpen));
+                settlingTimer = window.setTimeout(() => {
+                    shell.classList.remove("is-series-settling");
+                    shell.classList.remove("is-series-closing");
+                }, 340);
             });
         });
 
