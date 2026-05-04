@@ -63,6 +63,10 @@ section[id] {
     scroll-margin-top: 84px;
 }
 
+#voorbeelden {
+    scroll-margin-top: 0px;
+}
+
 .brand,
 .nav {
     display: flex;
@@ -1243,6 +1247,56 @@ h3 {
     bottom: 0;
 }
 
+/* Filmstrip MAP-X */
+.video-row--mapx .video-slider-button {
+    top: 48%;
+}
+
+.video-row--mapx .video-slider {
+    padding: 90px clamp(22px, 6vw, 82px) 42px;
+    margin-inline: calc(-1 * clamp(22px, 6vw, 82px));
+    background: linear-gradient(to right, #2a9199, var(--mapx) 50%, #2a9199);
+}
+
+.video-row--mapx .video-grid {
+    background: transparent;
+    scrollbar-color: rgba(255, 255, 255, 0.4) transparent;
+}
+
+.video-row--mapx .video-thumb {
+    box-shadow: none;
+    outline: 3px solid #fff;
+}
+
+.video-row--mapx .video-card strong {
+    color: #fff;
+    font-size: clamp(13px, 1.1vw, 15px);
+}
+
+.video-row--mapx .video-meta {
+    color: #fff;
+}
+
+.video-row--mapx .video-slider::before,
+.video-row--mapx .video-slider::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 48px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='48'%3E%3Crect x='9' y='11' width='26' height='26' rx='3' ry='3' fill='white'/%3E%3C/svg%3E");
+    background-size: 44px 48px;
+    background-repeat: repeat-x;
+}
+
+.video-row--mapx .video-slider::before {
+    top: 0;
+}
+
+.video-row--mapx .video-slider::after {
+    bottom: 0;
+}
+
 .video-row-header {
     max-width: 720px;
     margin-bottom: 24px;
@@ -1790,7 +1844,7 @@ h3 {
     margin-top: clamp(36px, 6vw, 62px);
     padding: clamp(24px, 4vw, 34px) clamp(26px, 5vw, 54px);
     border-radius: 8px;
-    background: #3D2566;
+    background: linear-gradient(135deg, #EF4C79 0%, #C0366A 50%, #7B2560 100%);
     text-align: center;
 }
 
