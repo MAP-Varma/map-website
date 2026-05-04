@@ -37,29 +37,37 @@
 
     <main class="legal-page contact-page">
         <section class="legal-hero contact-hero">
-            <p class="section-label">Contact</p>
-            <h1>Samen maken we<br>iets dat gezien<br>mag worden</h1>
-            <div class="contact-hero-actions">
-                <a class="contact-hero-button" href="mailto:info@mijnanimatiepaspoort.nl?subject=Gratis%20offerte%20aanvragen">Start het gesprek</a>
-                <a class="contact-hero-secondary" href="tel:+31682871751">Of bel direct &rarr;</a>
-            </div>
+            <p class="section-label"></p>
+            <h1>Contact</h1>
         </section>
 
-        <section class="contact-content" aria-label="Contactgegevens">
-            <div class="contact-reach">
-                <div class="contact-reach-header">
-                    <a class="contact-quote-button" href="mailto:info@mijnanimatiepaspoort.nl?subject=Gratis%20offerte%20aanvragen">Vraag een gratis offerte aan</a>
+<section class="contact-form-section">
+            <div class="contact-form-inner">
+                <div class="contact-form-intro">
+                    <h2>Laten we kennismaken</h2>
+                    <p>Vertel kort wat je zoekt, dan kijken we samen wat past. Geen verplichtingen.</p>
                 </div>
-                <div class="contact-links" aria-label="Directe contactgegevens">
-                    <a class="contact-link contact-link-phone" href="tel:+31682871751">
-                        <span class="contact-link-type">Telefoon</span>
-                        <span class="contact-link-value">+31 6 82871751</span>
-                    </a>
-                    <a class="contact-link contact-link-email" href="mailto:info@mijnanimatiepaspoort.nl">
-                        <span class="contact-link-type">E-mail</span>
-                        <span class="contact-link-value">info@mijnanimatiepaspoort.nl</span>
-                    </a>
-                </div>
+                <form class="contact-form" id="contact-form" novalidate>
+                    <div class="contact-form-field">
+                        <label for="cf-naam">Naam</label>
+                        <input type="text" id="cf-naam" name="naam" placeholder="Jouw naam" required>
+                    </div>
+                    <div class="contact-form-field">
+                        <label for="cf-email">E-mail</label>
+                        <input type="email" id="cf-email" name="email" placeholder="jouw@email.nl" required>
+                    </div>
+                    <div class="contact-form-field">
+                        <label for="cf-telefoon">Telefoon <span class="contact-form-optional">(optioneel)</span></label>
+                        <input type="tel" id="cf-telefoon" name="telefoon" placeholder="+31 6 ...">
+                    </div>
+                    <div class="contact-form-field contact-form-field-full">
+                        <label for="cf-bericht">Bericht</label>
+                        <textarea id="cf-bericht" name="bericht" rows="5" placeholder="Vertel kort wat je zoekt..." required></textarea>
+                    </div>
+                    <div class="contact-form-actions">
+                        <button type="submit" class="contact-form-submit">Verstuur bericht</button>
+                    </div>
+                </form>
             </div>
         </section>
 
@@ -120,6 +128,25 @@
         navLinks.forEach((link) => {
             link.addEventListener("click", () => setMenuOpen(false));
         });
+
+        const contactForm = document.getElementById("contact-form");
+        if (contactForm) {
+            contactForm.addEventListener("submit", function (e) {
+                e.preventDefault();
+                const naam = document.getElementById("cf-naam").value.trim();
+                const email = document.getElementById("cf-email").value.trim();
+                const telefoon = document.getElementById("cf-telefoon").value.trim();
+                const bericht = document.getElementById("cf-bericht").value.trim();
+                const subject = encodeURIComponent("Bericht via contactformulier");
+                const body = encodeURIComponent(
+                    "Naam: " + naam + "\n" +
+                    "E-mail: " + email + "\n" +
+                    (telefoon ? "Telefoon: " + telefoon + "\n" : "") +
+                    "\nBericht:\n" + bericht
+                );
+                window.location.href = "mailto:info@mijnanimatiepaspoort.nl?subject=" + subject + "&body=" + body;
+            });
+        }
     </script>
 </body>
 </html>
