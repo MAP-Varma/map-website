@@ -26,8 +26,7 @@
         </nav>
 
         <div class="header-actions">
-            <a class="header-button header-button-subtle" href="veelgestelde-vragen.html">FAQ</a>
-            <a class="header-button header-button-ghost" href="contact.html">Plan een gesprek</a>
+            <a class="header-button header-button-ghost" href="veelgestelde-vragen.html">Veelgestelde vragen</a>
             <a class="header-button header-button-primary" href="contact.html">Vraag een animatie aan</a>
             <button class="menu-button" type="button" aria-label="Menu" aria-controls="site-nav" aria-expanded="false">
                 <span></span>
@@ -118,9 +117,13 @@
 
         <section class="examples" id="voorbeelden">
             <div class="examples-header">
-                <p class="section-label">Voorbeelden</p>
-                <h2>Bekijk hoe verhalen tot leven komen.</h2>
-                <p>Persoonlijk of voor organisaties. Altijd op maat gemaakt.</p>
+                <span class="ex-glow ex-glow--teal" aria-hidden="true"></span>
+                <span class="ex-glow ex-glow--pink" aria-hidden="true"></span>
+                <span class="ex-dot" aria-hidden="true" style="--ex-x:62%;--ex-y:28%;--ex-size:7px;--ex-delay:0s;--ex-dur:7s"></span>
+                <span class="ex-dot" aria-hidden="true" style="--ex-x:28%;--ex-y:68%;--ex-size:5px;--ex-delay:1.6s;--ex-dur:9s"></span>
+                <span class="ex-dot ex-dot--teal" aria-hidden="true" style="--ex-x:78%;--ex-y:72%;--ex-size:9px;--ex-delay:0.8s;--ex-dur:8s"></span>
+                <h2>Ervaar de verhalen</h2>
+                <p class="examples-header-sub">Ontdek hoe persoonlijke verhalen worden vertaald naar beeld, stem en muziek</p>
             </div>
 
             <div class="video-row video-row--personal">
@@ -524,6 +527,24 @@
 
                 routeObserver.observe(routeGrid);
             }
+        }
+
+        const examplesHeader = document.querySelector(".examples-header");
+
+        if (examplesHeader && !prefersReducedMotion && "IntersectionObserver" in window) {
+            examplesHeader.classList.add("needs-animation");
+
+            const examplesObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.remove("needs-animation");
+                        entry.target.classList.add("is-visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            examplesObserver.observe(examplesHeader);
         }
     </script>
 </body>
