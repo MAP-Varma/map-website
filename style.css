@@ -4625,12 +4625,19 @@ h3 {
     border-radius: 999px;
     font-size: 15px;
     font-weight: 500;
-    background: var(--ink);
-    color: white;
-    transition: background 200ms ease, transform 200ms ease;
+    background: transparent;
+    color: var(--map);
+    border: 1.5px solid rgba(238, 88, 139, 0.35);
+    transition: border-color 200ms ease, transform 200ms ease;
 }
 
 .thank-you-back:hover {
-    background: var(--violet);
+    border-color: var(--map);
     transform: translateY(-2px);
+}
+
+@media (max-width: 860px) {
+    .thank-you-page {
+        padding-top: 118px;
+    }
 }
