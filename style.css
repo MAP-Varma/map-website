@@ -4536,18 +4536,18 @@ h3 {
     width: 72px;
     height: 72px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #3D2566 0%, #6B2D6B 50%, #EF4C79 100%);
+    background: var(--ink);
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 28px;
-    box-shadow: 0 14px 40px rgba(239, 76, 121, 0.28);
+    box-shadow: 0 14px 40px rgba(66, 182, 189, 0.28);
 }
 
 .thank-you-icon svg {
     width: 30px;
     height: 30px;
-    color: white;
+    color: var(--mapx);
 }
 
 .thank-you h1 {
