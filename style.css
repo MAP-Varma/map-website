@@ -1535,6 +1535,37 @@ h3 {
     transform: scale(1.035);
 }
 
+.video-badge {
+    position: absolute;
+    z-index: 3;
+    top: 12px;
+    left: 12px;
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    padding: 0 12px;
+    border-radius: 999px;
+    background: #EF4C79;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    overflow: hidden;
+    box-shadow: 0 12px 28px rgba(61, 37, 102, 0.2);
+    animation: videoBadgePulse 1.8s ease-in-out infinite;
+}
+
+.video-badge::after {
+    content: "";
+    position: absolute;
+    inset: -40% auto -40% -65%;
+    width: 42%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.85), transparent);
+    transform: skewX(-18deg);
+    animation: videoBadgeShine 2.6s ease-in-out infinite;
+}
+
 .video-play {
     position: absolute;
     z-index: 2;
@@ -1558,6 +1589,31 @@ h3 {
     border-top: 12px solid transparent;
     border-bottom: 12px solid transparent;
     border-left: 18px solid #EF4C79;
+}
+
+@keyframes videoBadgePulse {
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow: 0 12px 28px rgba(61, 37, 102, 0.2);
+    }
+
+    50% {
+        transform: scale(1.08);
+        box-shadow: 0 16px 34px rgba(239, 76, 121, 0.34);
+    }
+}
+
+@keyframes videoBadgeShine {
+    0%,
+    38% {
+        left: -65%;
+    }
+
+    68%,
+    100% {
+        left: 125%;
+    }
 }
 
 .video-meta {
