@@ -47,27 +47,33 @@
                     <h2>Laten we kennismaken</h2>
                     <p>Vertel kort wat je zoekt, dan kijken we samen wat past. Geen verplichtingen.</p>
                 </div>
-                <form class="contact-form" id="contact-form" novalidate>
-                    <div class="contact-form-field">
-                        <label for="cf-naam">Naam</label>
-                        <input type="text" id="cf-naam" name="naam" placeholder="Jouw naam" required>
-                    </div>
-                    <div class="contact-form-field">
-                        <label for="cf-email">E-mail</label>
-                        <input type="email" id="cf-email" name="email" placeholder="jouw@email.nl" required>
-                    </div>
-                    <div class="contact-form-field">
-                        <label for="cf-telefoon">Telefoon <span class="contact-form-optional">(optioneel)</span></label>
-                        <input type="tel" id="cf-telefoon" name="telefoon" placeholder="+31 6 ...">
-                    </div>
-                    <div class="contact-form-field contact-form-field-full">
-                        <label for="cf-bericht">Bericht</label>
-                        <textarea id="cf-bericht" name="bericht" rows="5" placeholder="Vertel kort wat je zoekt..." required></textarea>
-                    </div>
-                    <div class="contact-form-actions">
-                        <button type="submit" class="contact-form-submit">Verstuur bericht</button>
-                    </div>
-                </form>
+                <form class="contact-form" name="contact" method="POST" data-netlify="true" action="/bedankt.html">
+    <input type="hidden" name="form-name" value="contact">
+
+    <div class="contact-form-field">
+        <label for="cf-naam">Naam</label>
+        <input type="text" id="cf-naam" name="naam" placeholder="Jouw naam" required>
+    </div>
+
+    <div class="contact-form-field">
+        <label for="cf-email">E-mail</label>
+        <input type="email" id="cf-email" name="email" placeholder="jouw@email.nl" required>
+    </div>
+
+    <div class="contact-form-field">
+        <label for="cf-telefoon">Telefoon <span class="contact-form-optional">(optioneel)</span></label>
+        <input type="tel" id="cf-telefoon" name="telefoon" placeholder="+31 6 ...">
+    </div>
+
+    <div class="contact-form-field contact-form-field-full">
+        <label for="cf-bericht">Bericht</label>
+        <textarea id="cf-bericht" name="bericht" rows="5" placeholder="Vertel kort wat je zoekt..." required></textarea>
+    </div>
+
+    <div class="contact-form-actions">
+        <button type="submit" class="contact-form-submit">Verstuur bericht</button>
+    </div>
+</form>
             </div>
         </section>
 
@@ -129,24 +135,7 @@
             link.addEventListener("click", () => setMenuOpen(false));
         });
 
-        const contactForm = document.getElementById("contact-form");
-        if (contactForm) {
-            contactForm.addEventListener("submit", function (e) {
-                e.preventDefault();
-                const naam = document.getElementById("cf-naam").value.trim();
-                const email = document.getElementById("cf-email").value.trim();
-                const telefoon = document.getElementById("cf-telefoon").value.trim();
-                const bericht = document.getElementById("cf-bericht").value.trim();
-                const subject = encodeURIComponent("Bericht via contactformulier");
-                const body = encodeURIComponent(
-                    "Naam: " + naam + "\n" +
-                    "E-mail: " + email + "\n" +
-                    (telefoon ? "Telefoon: " + telefoon + "\n" : "") +
-                    "\nBericht:\n" + bericht
-                );
-                window.location.href = "mailto:info@mijnanimatiepaspoort.nl?subject=" + subject + "&body=" + body;
-            });
-        }
+        
     </script>
 </body>
 </html>
