@@ -4638,6 +4638,8 @@ h3 {
 
 @media (max-width: 860px) {
     .thank-you-page {
-        padding-top: 118px;
+        padding-top: 0;
+        padding-bottom: 118px;
+        min-height: calc(100vh - 118px);
     }
 }
