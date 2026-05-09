@@ -96,7 +96,7 @@
                         <div class="pricing-card-header">
                             <p class="pricing-eyebrow">MAP-X</p>
                             <h2>Uitleganimatie</h2>
-                            <p class="pricing-price">Vanaf €999 excl. btw</p>
+                            <p class="pricing-price">€999 excl. btw</p>
                         </div>
 
                         <p>Voor organisaties, praktijken en professionals die een werkwijze, dienst, methode, project of boodschap helder willen uitleggen.</p>
@@ -177,62 +177,54 @@
                         <div class="pricing-options-row pricing-options-head" role="row">
                             <div role="columnheader">Aanvullende optie</div>
                             <div role="columnheader">Omschrijving</div>
-                            <div role="columnheader">MAP</div>
-                            <div role="columnheader">MAP-X</div>
+                            <div role="columnheader">Prijs</div>
                         </div>
 
                         <div class="pricing-options-row" role="row">
                             <div role="cell" data-label="Aanvullende optie">Extra unieke plek of scène</div>
                             <div role="cell" data-label="Wat betekent dit?">Een speciaal gemaakte plek, achtergrond of scène die herkenbaar is voor jouw verhaal, werkwijze of project. Denk aan een woonkamer, werkplek, praktijkruimte, kantoor, teamsetting, processtap of symbolische omgeving.</div>
-                            <div role="cell" data-label="MAP">+ €150</div>
-                            <div role="cell" data-label="MAP-X">+ €195</div>
+                            <div role="cell" data-label="Prijs">+ €150</div>
                         </div>
 
                         <div class="pricing-options-row" role="row">
                             <div role="cell" data-label="Aanvullende optie">Extra uniek personage</div>
                             <div role="cell" data-label="Wat betekent dit?">Een extra personage dat is geïnspireerd op een echt persoon of een herkenbare rol. Denk aan een cliënt, begeleider, collega, familielid, klant, behandelaar of teamlid. Eén uniek personage is standaard inbegrepen.</div>
-                            <div role="cell" data-label="MAP">+ €125</div>
-                            <div role="cell" data-label="MAP-X">+ €150</div>
+                            <div role="cell" data-label="Prijs">+ €125</div>
                         </div>
 
                         <div class="pricing-options-row" role="row">
                             <div role="cell" data-label="Aanvullende optie">Extra minuut animatie</div>
                             <div role="cell" data-label="Wat betekent dit?">Voor animaties die meer ruimte nodig hebben dan de standaardduur. Dit is inclusief extra montage, timing, scènes en afwerking.</div>
-                            <div role="cell" data-label="MAP">+ €250</div>
-                            <div role="cell" data-label="MAP-X">+ €350</div>
+                            <div role="cell" data-label="Prijs">+ €250</div>
                         </div>
 
                         <div class="pricing-options-row" role="row">
                             <div role="cell" data-label="Aanvullende optie">Extra muziekoptie</div>
                             <div role="cell" data-label="Wat betekent dit?">Een extra muziekkeuze of sfeerlaag, bijvoorbeeld wanneer de animatie verschillende hoofdstukken, emoties of overgangen heeft.</div>
-                            <div role="cell" data-label="MAP">+ €75</div>
-                            <div role="cell" data-label="MAP-X">+ €95</div>
+                            <div role="cell" data-label="Prijs">+ €75</div>
                         </div>
 
                         <div class="pricing-options-row" role="row">
                             <div role="cell" data-label="Aanvullende optie">Extra revisieronde</div>
                             <div role="cell" data-label="Wat betekent dit?">Een extra ronde om feedback te verwerken nadat de inbegrepen revisieronde is afgerond.</div>
-                            <div role="cell" data-label="MAP">+ €150</div>
-                            <div role="cell" data-label="MAP-X">+ €250</div>
+                            <div role="cell" data-label="Prijs">+ €150</div>
                         </div>
 
                         <div class="pricing-options-row" role="row">
                             <div role="cell" data-label="Aanvullende optie">Extra intake, overleg of afstemmoment</div>
-                            <div role="cell" data-label="Wat betekent dit?">Voor extra verdieping, voorbereiding of overleg. Bij MAP kan dit bijvoorbeeld een extra gesprek zijn. Bij MAP-X kan dit ook afstemming met meerdere betrokkenen zijn.</div>
-                            <div role="cell" data-label="MAP">+ €95</div>
-                            <div role="cell" data-label="MAP-X">+ €175</div>
+                            <div role="cell" data-label="Wat betekent dit?">Voor extra verdieping, voorbereiding of overleg, bijvoorbeeld een extra gesprek of afstemming met meerdere betrokkenen.</div>
+                            <div role="cell" data-label="Prijs">+ €95</div>
                         </div>
 
                         <div class="pricing-options-row" role="row">
                             <div role="cell" data-label="Aanvullende optie">Huisstijl verwerken</div>
-                            <div role="cell" data-label="Wat betekent dit?">Alleen voor MAP-X. Denk aan kleuren, logo, tone of voice, organisatiestijl of bestaande communicatiemiddelen.</div>
-                            <div role="cell" data-label="MAP">Niet van toepassing</div>
-                            <div role="cell" data-label="MAP-X">vanaf + €250</div>
+                            <div role="cell" data-label="Wat betekent dit?">Denk aan kleuren, logo, tone of voice, organisatiestijl of bestaande communicatiemiddelen.</div>
+                            <div role="cell" data-label="Prijs">vanaf + €250</div>
                         </div>
                     </div>
 <br>
 <br>
-                    <p class="pricing-options-note">Eén uniek personage is standaard inbegrepen bij zowel MAP als MAP-X. </p>
+                    <p class="pricing-options-note">Grotere of complexere trajecten kunnen in overleg worden uitgebreid met aanvullende opties of maatwerk.</p>
 
                 </div>
             </details>
@@ -247,6 +239,7 @@
         const pricingOptionsSummary = pricingOptions?.querySelector("summary");
         const pricingOptionsInner = pricingOptions?.querySelector(".pricing-options-inner");
         const desktopPricingQuery = window.matchMedia("(min-width: 861px)");
+        const desktopSeriesQuery = window.matchMedia("(min-width: 1620px)");
         const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
         const seriesToggles = document.querySelectorAll(".series-tab");
 
@@ -271,28 +264,149 @@
 
         seriesToggles.forEach((button) => {
             const shell = button.closest(".pricing-card-shell");
+            const panel = shell?.querySelector(".series-panel");
             let settlingTimer = null;
+            let dragState = null;
+            let suppressClick = false;
 
-            shell?.addEventListener("pointerleave", () => {
-                shell.classList.remove("is-series-hover-paused");
-            });
+            function getPanelDistance() {
+                if (!shell) {
+                    return 0;
+                }
 
-            button.addEventListener("click", () => {
+                const styles = window.getComputedStyle(shell);
+                const panelWidth = parseFloat(styles.getPropertyValue("--series-panel-width")) || 360;
+                const labelWidth = parseFloat(styles.getPropertyValue("--series-label-width")) || 50;
+                return panelWidth - labelWidth + 7;
+            }
+
+            function setSeriesOpen(isOpen) {
                 if (!shell) {
                     return;
                 }
 
-                const wasOpen = shell.classList.contains("is-series-open");
                 window.clearTimeout(settlingTimer);
+                const wasOpen = shell.classList.contains("is-series-open");
+                shell.style.removeProperty("--series-drag-offset");
                 shell.classList.add("is-series-settling");
                 shell.classList.add("is-series-hover-paused");
-                shell.classList.toggle("is-series-closing", wasOpen);
-                const isOpen = shell.classList.toggle("is-series-open");
+                shell.classList.toggle("is-series-closing", wasOpen && !isOpen);
+                shell.classList.toggle("is-series-open", isOpen);
                 button.setAttribute("aria-expanded", String(isOpen));
                 settlingTimer = window.setTimeout(() => {
                     shell.classList.remove("is-series-settling");
                     shell.classList.remove("is-series-closing");
                 }, 340);
+            }
+
+            shell?.addEventListener("pointerleave", () => {
+                if (!dragState) {
+                    shell.classList.remove("is-series-hover-paused");
+                }
+            });
+
+            function beginDrag(event) {
+                if (dragState || !shell || !panel || !desktopSeriesQuery.matches || event.button > 0) {
+                    return;
+                }
+
+                const distance = getPanelDistance();
+                if (!distance) {
+                    return;
+                }
+
+                dragState = {
+                    distance,
+                    isMapx: shell.classList.contains("pricing-card-shell-mapx"),
+                    handle: event.currentTarget,
+                    pointerId: event.pointerId,
+                    startX: event.clientX,
+                    startedOpen: shell.classList.contains("is-series-open"),
+                    startProgress: shell.classList.contains("is-series-open") ? 1 : 0,
+                    progress: shell.classList.contains("is-series-open") ? 1 : 0,
+                    hasMoved: false
+                };
+
+                window.clearTimeout(settlingTimer);
+                event.currentTarget.setPointerCapture?.(event.pointerId);
+                shell.classList.add("is-series-dragging");
+                shell.classList.add("is-series-hover-paused");
+                shell.classList.add("is-series-open");
+                shell.classList.remove("is-series-settling");
+                shell.classList.remove("is-series-closing");
+
+                const startOffset = dragState.isMapx
+                    ? (dragState.progress - 1) * dragState.distance
+                    : (1 - dragState.progress) * dragState.distance;
+                shell.style.setProperty("--series-drag-offset", `${startOffset}px`);
+            }
+
+            button.addEventListener("pointerdown", beginDrag);
+            panel?.addEventListener("pointerdown", beginDrag);
+
+            function moveDrag(event) {
+                if (!shell || !dragState || event.pointerId !== dragState.pointerId) {
+                    return;
+                }
+
+                const delta = dragState.isMapx
+                    ? event.clientX - dragState.startX
+                    : dragState.startX - event.clientX;
+                const progress = Math.min(1, Math.max(0, dragState.startProgress + (delta / dragState.distance)));
+
+                dragState.progress = progress;
+                dragState.hasMoved = dragState.hasMoved || Math.abs(event.clientX - dragState.startX) > 4;
+                suppressClick = dragState.hasMoved;
+
+                const offset = dragState.isMapx
+                    ? (progress - 1) * dragState.distance
+                    : (1 - progress) * dragState.distance;
+                shell.style.setProperty("--series-drag-offset", `${offset}px`);
+            }
+
+            button.addEventListener("pointermove", moveDrag);
+            panel?.addEventListener("pointermove", moveDrag);
+            window.addEventListener("pointermove", moveDrag);
+
+            function finishDrag(event) {
+                if (!shell || !dragState || event.pointerId !== dragState.pointerId) {
+                    return;
+                }
+
+                const shouldOpen = dragState.progress >= 0.5;
+                if (dragState.handle.hasPointerCapture?.(event.pointerId)) {
+                    dragState.handle.releasePointerCapture(event.pointerId);
+                }
+                shell.classList.remove("is-series-dragging");
+                const hasMoved = dragState.hasMoved;
+                const startedOpen = dragState.startedOpen;
+                dragState = null;
+
+                if (hasMoved) {
+                    setSeriesOpen(shouldOpen);
+                } else {
+                    shell.style.removeProperty("--series-drag-offset");
+                    shell.classList.toggle("is-series-open", startedOpen);
+                }
+            }
+
+            button.addEventListener("pointerup", finishDrag);
+            button.addEventListener("pointercancel", finishDrag);
+            window.addEventListener("pointerup", finishDrag);
+            window.addEventListener("pointercancel", finishDrag);
+
+            button.addEventListener("click", (event) => {
+                if (suppressClick) {
+                    event.preventDefault();
+                    suppressClick = false;
+                    return;
+                }
+
+                if (!shell) {
+                    return;
+                }
+
+                setSeriesOpen(!shell.classList.contains("is-series-open"));
             });
         });
 
