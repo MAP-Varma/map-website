@@ -17,17 +17,26 @@
         </a>
 
         <nav class="nav" id="site-nav" aria-label="Hoofdnavigatie">
-            <a class="is-active" href="persoonlijke-animaties.html">Persoonlijke animaties (MAP)</a>
-            <a class="nav-mapx" href="uitleg-animaties.html">Uitleg animaties (MAP-X)</a>
-            <a href="#voorbeelden">Portfolio</a>
+            <div class="nav-dropdown is-active">
+                <button class="nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                    Onze diensten
+                    <span aria-hidden="true"></span>
+                </button>
+                <div class="nav-dropdown-menu">
+                    <a class="is-active" href="persoonlijke-animaties.html">Persoonlijke animaties (MAP)</a>
+                    <a class="nav-mapx" href="uitleg-animaties.html">Uitleg animaties (MAP-X)</a>
+                </div>
+            </div>
+            <a href="portfolio.html">Portfolio</a>
             <a href="over-mij.html">Over mij</a>
             <a href="tarieven.html">Tarieven</a>
+            <a href="sponsorplek.html">Sponsorplek</a>
             <a href="contact.html">Contact</a>
+            <a class="nav-cta" href="contact.html">Vraag een animatie aan</a>
         </nav>
 
         <div class="header-actions">
             <a class="header-button header-button-ghost" href="veelgestelde-vragen.html">Veelgestelde vragen</a>
-            <a class="header-button header-button-primary" href="contact.html">Vraag een animatie aan</a>
             <button class="menu-button" type="button" aria-label="Menu" aria-controls="site-nav" aria-expanded="false">
                 <span></span>
                 <span></span>
@@ -39,22 +48,12 @@
     <main>
         <div class="hero-scroll-container">
         <section class="hero" id="wat-is-map">
-            <div class="hero-kicker" aria-label="Thema's">
-                <span>Verhalen</span>
-                <i></i>
-                <span>Passie</span>
-                <i></i>
-                <span>Visies</span>
-                <i></i>
-                <span>Methodieken</span>
-            </div>
-
             <div class="hero-statement">
-                <p>Samen maken we het</p>
-                <h2>zichtbaar</h2>
+                <p class="hero-eyebrow">Mijn Animatie Paspoort</p>
+                <h1>Samen maken we <span>het <em>zichtbaar</em></span></h1>
                 <p class="hero-statement-sub">MAP vertaalt verhalen, herstel en ontwikkeling naar beeld, muziek en beweging. Zodat mensen zich beter begrepen voelen, en organisaties hun boodschap helder, menselijk en krachtig kunnen overbrengen.</p>
                 <div class="hero-actions" aria-label="Vervolgacties">
-                    <a class="button hero-button hero-button-primary" href="contact.html">Ik wil mijn verhaal zichtbaar maken <span class="hero-button-arrow" aria-hidden="true"></span></a>
+                    <a class="button hero-button hero-button-primary" href="contact.html">Maak mijn verhaal zichtbaar <span class="hero-button-arrow" aria-hidden="true"></span></a>
                     <a class="button hero-button hero-button-examples" href="#voorbeelden">Bekijk voorbeelden</a>
                 </div>
             </div>
@@ -66,18 +65,8 @@
                 <span></span>
             </div>
 
-            <div class="hero-play" aria-hidden="true">
-                <span class="icon-phone"></span>
-                <span class="icon-briefcase"></span>
-                <span class="icon-mic"></span>
-                <span class="icon-keys"></span>
-                <svg class="icon-prohibition" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
-                    <circle cx="50" cy="50" r="42"></circle>
-                    <path d="M31 24A35 35 0 0 1 80 65"></path>
-                    <path d="M69 76A35 35 0 0 1 20 35"></path>
-                    <path d="M29 24L80 68L72 78L21 34Z"></path>
-                </svg>
-                <span class="icon-board">E=mc<sup>2</sup></span>
+            <div class="hero-visual" aria-hidden="true">
+                <img class="hero-picture" src="assets/Hero_picture.png" alt="">
             </div>
         </section>
         </div>
@@ -90,124 +79,110 @@
 
             <div class="route-grid">
                 <article class="route">
-                    <span class="route-label">MAP</span>
-                    <h3>Persoonlijke Animatie</h3>
-                    <p>Voor mensen die hun verhaal, ervaring of ontwikkeling zichtbaar willen maken.</p>
-                    <ul>
-                        <li>Individuen (jij, partner, cliënten, in zorg of niet)</li>
-                        <li>Identiteit, groei, persoonlijke stappen</li>
-                        <li>Jouw verhaal in beeld gebracht</li>
-                    </ul>
-                    <a class="button route-button" href="persoonlijke-animaties.html">Ontdek MAP</a>
+                    <a class="route-card-link" href="persoonlijke-animaties.html">
+                        <span class="route-icon" aria-hidden="true">
+                            <img src="assets/Choice_icon_MAP-symbol.png" alt="">
+                        </span>
+                        <span class="route-copy">
+                            <span class="route-label">MAP</span>
+                            <span class="route-title">Persoonlijke Animatie</span>
+                            <span class="route-description">Voor mensen die hun verhaal zichtbaar willen maken, voor henzelf of om te delen met anderen.</span>
+                        </span>
+                    </a>
                 </article>
 
                 <article class="route route-x" id="map-x">
-                    <span class="route-label">MAP-X</span>
-                    <h3>Uitleganimatie</h3>
-                    <p>Voor bijvoorbeeld organisaties die inhoud helder willen uitleggen: menselijk, professioneel en makkelijk te begrijpen.</p>
-                    <ul>
-                        <li>Trainingen, onboarding en interne uitleg</li>
-                        <li>Visies, methodieken en werkwijzen</li>
-                        <li>Complexe inhoud eenvoudig en visueel uitgelegd</li>
-                    </ul>
-                    <a class="button route-button" href="uitleg-animaties.html">Ontdek MAP-X</a>
+                    <a class="route-card-link" href="uitleg-animaties.html">
+                        <span class="route-icon" aria-hidden="true">
+                            <img src="assets/Choice_icon_MAPX-symbol.png" alt="">
+                        </span>
+                        <span class="route-copy">
+                            <span class="route-label">MAP-X</span>
+                            <span class="route-title">Uitleganimatie</span>
+                            <span class="route-description">Voor bijvoorbeeld organisaties die inhoud helder willen uitleggen: menselijk, professioneel en makkelijk te begrijpen.</span>
+                        </span>
+                    </a>
                 </article>
             </div>
         </section>
 
         <section class="examples" id="voorbeelden">
             <div class="examples-header">
-                <span class="ex-glow ex-glow--teal" aria-hidden="true"></span>
-                <span class="ex-glow ex-glow--pink" aria-hidden="true"></span>
-                <span class="ex-dot" aria-hidden="true" style="--ex-x:62%;--ex-y:28%;--ex-size:7px;--ex-delay:0s;--ex-dur:7s"></span>
-                <span class="ex-dot" aria-hidden="true" style="--ex-x:28%;--ex-y:68%;--ex-size:5px;--ex-delay:1.6s;--ex-dur:9s"></span>
-                <span class="ex-dot ex-dot--teal" aria-hidden="true" style="--ex-x:78%;--ex-y:72%;--ex-size:9px;--ex-delay:0.8s;--ex-dur:8s"></span>
-                <h2>Ervaar de verhalen</h2>
-                <p class="examples-header-sub">Ontdek hoe persoonlijke verhalen worden vertaald naar beeld, stem en muziek</p>
-            </div>
-
-            <div class="video-row video-row--personal">
-                <div class="video-row-header">
-                    <h3>Portfolio (MAP)</h3>
-                    <p>Bekijk hoe persoonlijke verhalen en ervaringen tot leven komen</p>
+                <div class="examples-copy">
+                    <p class="section-label">Portfolio preview</p>
+                    <h2>Uitgelichte animaties</h2>
+                    <p class="examples-header-sub">Een kleine selectie van persoonlijke verhalen en uitleganimaties.</p>
+                    <a class="examples-button" href="portfolio.html">
+                        <span class="examples-button-icon" aria-hidden="true"></span>
+                        Bekijk portfolio
+                    </a>
                 </div>
 
-                <div class="video-slider">
-                    <button class="video-slider-button video-slider-prev" type="button" aria-label="Vorige persoonlijke animaties">
-                        <span aria-hidden="true"></span>
-                    </button>
+                <div class="examples-visual" aria-hidden="true">
+                    <span class="examples-spark examples-spark--pink"></span>
+                    <span class="examples-spark examples-spark--blue"></span>
+                    <span class="examples-spark examples-spark--violet"></span>
+                    <span class="examples-reel">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                    <span class="examples-screen">
+                        <span class="examples-screen-play"></span>
+                        <span class="examples-screen-timeline"><span></span></span>
+                    </span>
+                    <span class="examples-plant">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </div>
+            </div>
 
-                    <div class="video-grid" tabindex="0" aria-label="Persoonlijke animatievoorbeelden">
-                        <a class="video-card video-card--new" href="https://youtu.be/Y9TlVVCf2x8" target="_blank" rel="noopener noreferrer">
+            <div class="video-showcase" id="uitgelichte-animaties">
+                <div class="video-row video-row--featured">
+                    <div class="video-preview-grid" aria-label="Uitgelichte animatievoorbeelden">
+                        <a class="video-card video-card--new" href="https://youtu.be/ABoxaunvkIc" target="_blank" rel="noopener noreferrer" data-category="map">
                             <span class="video-thumb">
-                                <span class="video-badge">Nieuw</span>
+                                <span class="video-badge video-badge--new">Nieuw</span>
+                                <img src="https://img.youtube.com/vi/ABoxaunvkIc/maxresdefault.jpg" alt="Thumbnail van animatie">
+                                <span class="video-play" aria-hidden="true"></span>
+                            </span>
+                            <span class="video-card-body">
+                                <span class="video-meta">Persoonlijke Animatie (MAP)</span>
+                                <strong>&ldquo;Niet Ramses met dit of dat, maar gewoon Ramses.&rdquo;</strong>
+                                <span class="video-description">Een persoonlijk verhaal over identiteit, erkenning en gezien worden.</span>
+                            </span>
+                        </a>
+
+                        <a class="video-card" href="https://youtu.be/Y9TlVVCf2x8" target="_blank" rel="noopener noreferrer" data-category="map">
+                            <span class="video-thumb">
                                 <img src="https://img.youtube.com/vi/Y9TlVVCf2x8/maxresdefault.jpg" alt="Thumbnail van animatie">
                                 <span class="video-play" aria-hidden="true"></span>
                             </span>
-                            <span class="video-meta">Persoonlijk</span>
-                            <strong>"Dan voel ik mij gewoon goed, en dat is voor mij het belangerijkst"</strong>
+                            <span class="video-card-body">
+                                <span class="video-meta">Persoonlijke Animatie (MAP)</span>
+                                <strong>&ldquo;Dan voel ik mij gewoon goed, en dat is voor mij het belangrijkst&rdquo;</strong>
+                                <span class="video-description">Over kleine keuzes, eigen regie en wat goed voelen betekent.</span>
+                            </span>
                         </a>
 
-                        <a class="video-card" href="https://youtu.be/2z9tdda3HGY?si=ps_qaWMmxiKhoR0S" target="_blank" rel="noopener noreferrer">
+                        <a class="video-card" href="https://youtu.be/2z9tdda3HGY?si=ps_qaWMmxiKhoR0S" target="_blank" rel="noopener noreferrer" data-category="map">
                             <span class="video-thumb">
                                 <img src="https://img.youtube.com/vi/2z9tdda3HGY/maxresdefault.jpg" alt="Thumbnail van persoonlijk animatievoorbeeld 1">
                                 <span class="video-play" aria-hidden="true"></span>
                             </span>
-                            <span class="video-meta">Herstelverhaal · Trimbos Instituut</span>
-                            <strong>Van “ik ben mislukt” naar “ik doe ertoe”</strong>
-                        </a>
-
-                        <a class="video-card" href="https://youtu.be/my7-XXYcJ2s?si=fCc3A_tKM1YJvieu" target="_blank" rel="noopener noreferrer">
-                            <span class="video-thumb">
-                                <img src="https://img.youtube.com/vi/my7-XXYcJ2s/maxresdefault.jpg" alt="Thumbnail van persoonlijk animatievoorbeeld 2">
-                                <span class="video-play" aria-hidden="true"></span>
+                            <span class="video-card-body">
+                                <span class="video-meta">Herstelverhaal &middot; Trimbos Instituut</span>
+                                <strong>Van &ldquo;ik ben mislukt&rdquo; naar &ldquo;ik doe ertoe&rdquo;</strong>
+                                <span class="video-description">Een herstelverhaal over ruimte nemen en opnieuw betekenis vinden.</span>
                             </span>
-                            <span class="video-meta">Enik Recovery College</span>
-                            <strong>Je hoeft het niet alleen te doen</strong>
-                        </a>
-
-                        <a class="video-card" href="https://youtu.be/aHzMcfUVJuI?si=ZgUUymgt1f_lWbLT" target="_blank" rel="noopener noreferrer">
-                            <span class="video-thumb">
-                                <img src="https://img.youtube.com/vi/aHzMcfUVJuI/maxresdefault.jpg" alt="Thumbnail van persoonlijk animatievoorbeeld 3">
-                                <span class="video-play" aria-hidden="true"></span>
-                            </span>
-                            <span class="video-meta">Persoonlijk</span>
-                            <strong>Van isolatie naar verbinding — van overleven naar betekenis</strong>
                         </a>
                     </div>
-
-                    <button class="video-slider-button video-slider-next" type="button" aria-label="Volgende persoonlijke animaties">
-                        <span aria-hidden="true"></span>
-                    </button>
                 </div>
             </div>
 
-            <div class="video-row video-row--mapx">
-                <div class="video-row-header">
-                    <h3>Portfolio (MAP-X)</h3>
-                    <p>Heldere animaties voor organisaties, methodieken, trainingen en complexe informatie.</p>
-                </div>
-
-                <div class="video-slider">
-                    <button class="video-slider-button video-slider-prev" type="button" aria-label="Vorige uitleganimaties">
-                        <span aria-hidden="true"></span>
-                    </button>
-
-                    <div class="video-grid" tabindex="0" aria-label="Uitleganimatievoorbeelden">
-                        <article class="video-card video-card-placeholder">
-                            <span class="video-thumb">
-                                <span class="video-placeholder">YouTube-link toevoegen</span>
-                            </span>
-                            <span class="video-meta">Organisatie</span>
-                            <strong>Uitleganimatie</strong>
-                        </article>
-                    </div>
-
-                    <button class="video-slider-button video-slider-next" type="button" aria-label="Volgende uitleganimaties">
-                        <span aria-hidden="true"></span>
-                    </button>
-                </div>
-            </div>
         </section>
 
         <section class="faq" id="faq">
@@ -273,8 +248,8 @@
 
             <div class="footer-bottom">
                 <nav class="footer-links" aria-label="Footer links">
-                    <a href="privacyverklaring.html">Privacyverklaring</a>
-                    <a href="algemene-voorwaarden.html">Algemene voorwaarden</a>
+                    <a href="privacyverklaring.html" target="_blank" rel="noopener noreferrer">Privacyverklaring</a>
+                    <a href="algemene-voorwaarden.html" target="_blank" rel="noopener noreferrer">Algemene voorwaarden</a>
                 </nav>
                 <p>&copy; 2026 Mijn Animatie Paspoort</p>
             </div>
@@ -282,16 +257,10 @@
     </main>
 
     <script>
-        const hero = document.querySelector(".hero");
-        const heroScrollContainer = document.querySelector(".hero-scroll-container");
-        const heroIcons = document.querySelectorAll(".hero-play > *");
         const siteHeader = document.querySelector(".site-header");
         const menuButton = document.querySelector(".menu-button");
         const navLinks = document.querySelectorAll(".nav a");
         const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        let heroSlideLocked = false;
-        let heroTouchStartY = null;
-        const heroSlideLockDuration = 600;
 
         function setMenuOpen(isOpen) {
             if (!siteHeader || !menuButton) {
@@ -312,217 +281,7 @@
             link.addEventListener("click", () => setMenuOpen(false));
         });
 
-        function isInsideHeroIntro() {
-            if (!heroScrollContainer) {
-                return false;
-            }
-
-            const rect = heroScrollContainer.getBoundingClientRect();
-            const triggerTop = Math.max(2, window.innerHeight * 0.28);
-            return rect.top <= triggerTop && rect.bottom > window.innerHeight * 0.45;
-        }
-
-        function updateHeroSlide(direction, event, lockDuration = heroSlideLockDuration) {
-            if (!hero || prefersReducedMotion || !isInsideHeroIntro()) {
-                return false;
-            }
-
-            const isRevealed = hero.classList.contains("is-revealed");
-
-            if (direction > 0 && !isRevealed) {
-                event.preventDefault();
-                hero.classList.add("is-revealed");
-                heroSlideLocked = true;
-            } else if (direction < 0 && isRevealed && window.scrollY <= 4) {
-                event.preventDefault();
-                hero.classList.remove("is-revealed");
-                heroSlideLocked = true;
-            } else {
-                return false;
-            }
-
-            window.setTimeout(() => {
-                heroSlideLocked = false;
-            }, lockDuration);
-
-            return true;
-        }
-
-        function shouldHoldHeroTouchScroll() {
-            return hero && !prefersReducedMotion && isInsideHeroIntro() && (heroSlideLocked || !hero.classList.contains("is-revealed"));
-        }
-
-        const iconMotion = Array.from(heroIcons, (icon) => ({
-            icon,
-            x: 0,
-            y: 0,
-            vx: 0,
-            vy: 0,
-        }));
-
-        let lastPointer = null;
-        let motionFrame = null;
-
-        function moveIconsFromPointer(event) {
-            const pointerMoveX = lastPointer ? event.clientX - lastPointer.x : 0;
-            const pointerMoveY = lastPointer ? event.clientY - lastPointer.y : 0;
-            lastPointer = { x: event.clientX, y: event.clientY };
-
-            iconMotion.forEach((item) => {
-                const { icon } = item;
-                const rect = icon.getBoundingClientRect();
-                const centerX = rect.left + rect.width / 2;
-                const centerY = rect.top + rect.height / 2;
-                const deltaX = centerX - event.clientX;
-                const deltaY = centerY - event.clientY;
-                const distance = Math.hypot(deltaX, deltaY);
-                const radius = 240;
-                const pointerSpeed = Math.hypot(pointerMoveX, pointerMoveY);
-
-                if (distance > radius || distance === 0 || pointerSpeed < 0.1) {
-                    return;
-                }
-
-                const proximity = 1 - distance / radius;
-                const influence = proximity * proximity * (3 - 2 * proximity);
-                const angle = Math.atan2(deltaY, deltaX);
-                const cappedSpeed = Math.min(pointerSpeed, 28);
-                item.vx += (pointerMoveX * 0.035 + Math.cos(angle) * cappedSpeed * 0.012) * influence;
-                item.vy += (pointerMoveY * 0.035 + Math.sin(angle) * cappedSpeed * 0.012) * influence;
-            });
-
-            startIconMotion();
-        }
-
-        function resetIconPositions() {
-            lastPointer = null;
-        }
-
-        function startIconMotion() {
-            if (!motionFrame) {
-                motionFrame = requestAnimationFrame(updateIconMotion);
-            }
-        }
-
-        function updateIconMotion() {
-            let hasMovement = false;
-            const heroRect = hero.getBoundingClientRect();
-
-            iconMotion.forEach((item) => {
-                item.x += item.vx;
-                item.y += item.vy;
-                item.vx *= 0.965;
-                item.vy *= 0.965;
-                item.x *= 0.993;
-                item.y *= 0.993;
-
-                const rect = item.icon.getBoundingClientRect();
-                const baseLeft = rect.left - item.x;
-                const baseTop = rect.top - item.y;
-                const minX = heroRect.left - baseLeft;
-                const maxX = heroRect.right - (baseLeft + rect.width);
-                const minY = heroRect.top - baseTop;
-                const maxY = heroRect.bottom - (baseTop + rect.height);
-
-                if (item.x < minX || item.x > maxX) {
-                    item.x = Math.max(minX, Math.min(maxX, item.x));
-                    item.vx *= -0.35;
-                }
-
-                if (item.y < minY || item.y > maxY) {
-                    item.y = Math.max(minY, Math.min(maxY, item.y));
-                    item.vy *= -0.35;
-                }
-
-                if (Math.abs(item.x) > 0.05 || Math.abs(item.y) > 0.05 || Math.abs(item.vx) > 0.05 || Math.abs(item.vy) > 0.05) {
-                    hasMovement = true;
-                }
-
-                item.icon.style.setProperty("--cursor-x", `${item.x.toFixed(2)}px`);
-                item.icon.style.setProperty("--cursor-y", `${item.y.toFixed(2)}px`);
-            });
-
-            motionFrame = hasMovement ? requestAnimationFrame(updateIconMotion) : null;
-        }
-
-        window.addEventListener("wheel", (event) => {
-            if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) {
-                return;
-            }
-
-            if (heroSlideLocked) {
-                event.preventDefault();
-                return;
-            }
-
-            updateHeroSlide(event.deltaY, event);
-        }, { passive: false });
-
-        window.addEventListener("touchstart", (event) => {
-            heroTouchStartY = event.touches.length === 1 ? event.touches[0].clientY : null;
-        }, { passive: true });
-
-        window.addEventListener("touchmove", (event) => {
-            if (heroSlideLocked) {
-                event.preventDefault();
-                return;
-            }
-
-            if (heroTouchStartY === null || event.touches.length !== 1) {
-                return;
-            }
-
-            const shouldHoldHero = shouldHoldHeroTouchScroll();
-            const deltaY = heroTouchStartY - event.touches[0].clientY;
-
-            if (shouldHoldHero) {
-                event.preventDefault();
-            }
-
-            if (Math.abs(deltaY) < 10) {
-                return;
-            }
-
-            if (updateHeroSlide(deltaY, event)) {
-                heroTouchStartY = null;
-            }
-        }, { passive: false });
-
-        function setupVideoSlider(slider) {
-            const videoSlider = slider.querySelector(".video-grid");
-            const videoPrev = slider.querySelector(".video-slider-prev");
-            const videoNext = slider.querySelector(".video-slider-next");
-
-            if (!videoSlider || !videoPrev || !videoNext) {
-                return;
-            }
-
-            function updateVideoSliderButtons() {
-                const maxScroll = videoSlider.scrollWidth - videoSlider.clientWidth;
-                videoPrev.disabled = videoSlider.scrollLeft <= 4;
-                videoNext.disabled = videoSlider.scrollLeft >= maxScroll - 4;
-            }
-
-            function scrollVideoSlider(direction) {
-                const firstCard = videoSlider.querySelector(".video-card");
-                const gap = parseFloat(getComputedStyle(videoSlider).columnGap) || 0;
-                const scrollAmount = firstCard ? firstCard.getBoundingClientRect().width + gap : videoSlider.clientWidth;
-                videoSlider.scrollBy({ left: direction * scrollAmount, behavior: "smooth" });
-            }
-
-            videoPrev.addEventListener("click", () => scrollVideoSlider(-1));
-            videoNext.addEventListener("click", () => scrollVideoSlider(1));
-            videoSlider.addEventListener("scroll", updateVideoSliderButtons, { passive: true });
-            window.addEventListener("resize", updateVideoSliderButtons);
-            updateVideoSliderButtons();
-        }
-
-        document.querySelectorAll(".video-slider").forEach(setupVideoSlider);
-
         if (!prefersReducedMotion) {
-            hero.addEventListener("pointermove", moveIconsFromPointer);
-            hero.addEventListener("pointerleave", resetIconPositions);
-
             const routeGrid = document.querySelector(".route-grid");
 
             if (routeGrid && "IntersectionObserver" in window) {

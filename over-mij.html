@@ -16,17 +16,26 @@
         </a>
 
         <nav class="nav" id="site-nav" aria-label="Hoofdnavigatie">
-            <a href="persoonlijke-animaties.html">Persoonlijke animaties (MAP)</a>
-            <a class="nav-mapx" href="uitleg-animaties.html">Uitleg animaties (MAP-X)</a>
-            <a href="index.html#voorbeelden">Portfolio</a>
+            <div class="nav-dropdown">
+                <button class="nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                    Onze diensten
+                    <span aria-hidden="true"></span>
+                </button>
+                <div class="nav-dropdown-menu">
+                    <a href="persoonlijke-animaties.html">Persoonlijke animaties (MAP)</a>
+                    <a class="nav-mapx" href="uitleg-animaties.html">Uitleg animaties (MAP-X)</a>
+                </div>
+            </div>
+            <a href="portfolio.html">Portfolio</a>
             <a class="is-active" href="over-mij.html">Over mij</a>
             <a href="tarieven.html">Tarieven</a>
+            <a href="sponsorplek.html">Sponsorplek</a>
             <a href="contact.html">Contact</a>
+            <a class="nav-cta" href="contact.html">Vraag een animatie aan</a>
         </nav>
 
         <div class="header-actions">
             <a class="header-button header-button-ghost" href="veelgestelde-vragen.html">Veelgestelde vragen</a>
-            <a class="header-button header-button-primary" href="contact.html">Vraag een animatie aan</a>
             <button class="menu-button" type="button" aria-label="Menu" aria-controls="site-nav" aria-expanded="false">
                 <span></span>
                 <span></span>
@@ -36,13 +45,21 @@
     </header>
 
     <main class="legal-page about-page">
-        <section class="legal-hero">
-            <p class="section-label"></p>
-            <h1>Varma</h1>
-            <p>Oprichter en het gezicht achter Mijn Animatie Paspoort.</p>
+        <section class="about-hero">
+            <div class="about-hero-copy">
+                <p class="section-label">Over mij</p>
+                <h1>Mijn doel is verbinden</h1>
+                <p>Ik maak animaties met zorg en aandacht, waarin jouw verhaal, identiteit, stem en muziek samenkomen. Zo ontstaat er iets dat mensen helpt om elkaar beter te begrijpen en opnieuw te verbinden.</p>
+                <div class="about-hero-actions" aria-label="Vervolgacties">
+                    <a class="about-hero-button about-hero-button-primary" href="#mijn-verhaal">Lees mijn verhaal <span aria-hidden="true"></span></a>
+                    <a class="about-hero-button about-hero-button-secondary" href="contact.html">Neem contact op</a>
+                </div>
+            </div>
+
+            <img class="about-hero-illustration" src="assets/overmij_Hero_illustration.png" alt="" aria-hidden="true">
         </section>
 
-        <section class="legal-content about-content" aria-label="Over mij">
+        <section class="legal-content about-content" id="mijn-verhaal" aria-label="Over mij">
             <article>
                 <div class="about-intro">
                     <div>

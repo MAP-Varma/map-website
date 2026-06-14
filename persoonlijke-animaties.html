@@ -16,17 +16,26 @@
         </a>
 
         <nav class="nav" id="site-nav" aria-label="Hoofdnavigatie">
-            <a class="is-active" href="persoonlijke-animaties.html">Persoonlijke animaties (MAP)</a>
-            <a class="nav-mapx" href="uitleg-animaties.html">Uitleg animaties (MAP-X)</a>
-            <a href="index.html#voorbeelden">Portfolio</a>
+            <div class="nav-dropdown is-active">
+                <button class="nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                    Onze diensten
+                    <span aria-hidden="true"></span>
+                </button>
+                <div class="nav-dropdown-menu">
+                    <a class="is-active" href="persoonlijke-animaties.html">Persoonlijke animaties (MAP)</a>
+                    <a class="nav-mapx" href="uitleg-animaties.html">Uitleg animaties (MAP-X)</a>
+                </div>
+            </div>
+            <a href="portfolio.html">Portfolio</a>
             <a href="over-mij.html">Over mij</a>
             <a href="tarieven.html">Tarieven</a>
+            <a href="sponsorplek.html">Sponsorplek</a>
             <a href="contact.html">Contact</a>
+            <a class="nav-cta" href="contact.html">Vraag een animatie aan</a>
         </nav>
 
         <div class="header-actions">
             <a class="header-button header-button-ghost" href="veelgestelde-vragen.html">Veelgestelde vragen</a>
-            <a class="header-button header-button-primary" href="contact.html">Vraag een animatie aan</a>
             <button class="menu-button" type="button" aria-label="Menu" aria-controls="site-nav" aria-expanded="false">
                 <span></span>
                 <span></span>
@@ -35,14 +44,22 @@
         </div>
     </header>
 
-    <main class="legal-page">
-        <section class="legal-hero">
-            <p class="section-label"></p>
-            <h1>Persoonlijke Animaties</h1>
-            <p>MAP-X</p>
+    <main class="legal-page map-page">
+        <section class="map-hero">
+            <div class="map-hero-copy">
+                <p class="section-label">MAP</p>
+                <h1>Persoonlijke Animaties</h1>
+                <p>Jouw verhaal, jouw tempo, jouw boodschap. Samen maken we een persoonlijke animatie die laat zien wie jij bent, wat belangrijk voor je is en waar je naartoe wilt. Voor jezelf of om te delen met mensen om je heen.</p>
+                <div class="map-hero-actions" aria-label="Vervolgacties">
+                    <a class="map-hero-button map-hero-button-primary" href="contact.html">Maak mijn verhaal zichtbaar <span aria-hidden="true"></span></a>
+                    <a class="map-hero-button map-hero-button-secondary" href="#map-uitleg">Lees meer over MAP</a>
+                </div>
+            </div>
+
+            <img class="map-hero-illustration" src="assets/MAP_hero_illustration.png" alt="" aria-hidden="true">
         </section>
 
-        <section class="legal-content map-content" aria-label="Persoonlijke animaties">
+        <section class="legal-content map-content" id="map-uitleg" aria-label="Persoonlijke animaties">
             <div class="map-content-grid">
                 <div class="map-side-panel">
                     <article>

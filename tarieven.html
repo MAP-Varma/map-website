@@ -16,17 +16,26 @@
         </a>
 
         <nav class="nav" id="site-nav" aria-label="Hoofdnavigatie">
-            <a href="persoonlijke-animaties.html">Persoonlijke animaties (MAP)</a>
-            <a class="nav-mapx" href="uitleg-animaties.html">Uitleganimaties (MAP-X)</a>
-            <a href="index.html#voorbeelden">Portfolio</a>
+            <div class="nav-dropdown">
+                <button class="nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                    Onze diensten
+                    <span aria-hidden="true"></span>
+                </button>
+                <div class="nav-dropdown-menu">
+                    <a href="persoonlijke-animaties.html">Persoonlijke animaties (MAP)</a>
+                    <a class="nav-mapx" href="uitleg-animaties.html">Uitleg animaties (MAP-X)</a>
+                </div>
+            </div>
+            <a href="portfolio.html">Portfolio</a>
             <a href="over-mij.html">Over mij</a>
             <a class="is-active" href="tarieven.html">Tarieven</a>
+            <a href="sponsorplek.html">Sponsorplek</a>
             <a href="contact.html">Contact</a>
+            <a class="nav-cta" href="contact.html">Vraag een animatie aan</a>
         </nav>
 
         <div class="header-actions">
             <a class="header-button header-button-ghost" href="veelgestelde-vragen.html">Veelgestelde vragen</a>
-            <a class="header-button header-button-primary" href="contact.html">Vraag een animatie aan</a>
             <button class="menu-button" type="button" aria-label="Menu" aria-controls="site-nav" aria-expanded="false">
                 <span></span>
                 <span></span>
@@ -36,49 +45,158 @@
     </header>
 
     <main class="legal-page">
-        <section class="legal-hero">
-            <p class="section-label"></p>
-            <h1> Tarieven</h1>
+        <section class="pricing-hero" aria-labelledby="pricing-hero-title">
+            <div class="pricing-hero-copy">
+                <p class="section-label">Tarieven</p>
+                <h1 id="pricing-hero-title">Maak een keuze</h1>
+                <p>Of het nu gaat om je eigen verhaal, een sponsorplek of een animatie binnen een organisatie: kies de optie die nu past en bekijk alleen de tarieven die daarbij horen.</p>
+            </div>
+
+            <div class="pricing-choice" aria-label="Tarieven kiezen">
+                <div class="route-options pricing-hero-options" role="group" aria-label="Tarieven kiezen">
+                    <button class="route-option pricing-hero-option pricing-hero-option-personal" type="button" data-route-option="personal" aria-pressed="false">
+                        <span class="pricing-choice-icon" aria-hidden="true">
+                            <img src="assets/Tarieven_icon_particulier.png" alt="">
+                        </span>
+                        <span class="route-option-title">Particulier</span>
+                        <span class="route-option-subtitle">Voor je eigen verhaal</span>
+                    </button>
+
+                    <button class="route-option pricing-hero-option pricing-hero-option-sponsor" type="button" data-route-option="sponsor" aria-pressed="false">
+                        <span class="pricing-choice-icon" aria-hidden="true">
+                            <img src="assets/Tarieven_icon_sponsorplek.png" alt="">
+                        </span>
+                        <span class="route-option-title">Sponsorplek</span>
+                        <span class="route-option-subtitle">Maak een verhaal mogelijk</span>
+                    </button>
+
+                    <button class="route-option pricing-hero-option pricing-hero-option-business" type="button" data-route-option="business" aria-pressed="false">
+                        <span class="pricing-choice-icon" aria-hidden="true">
+                            <img src="assets/Tarieven_icon_zakelijk.png" alt="">
+                        </span>
+                        <span class="route-option-title">Zakelijk</span>
+                        <span class="route-option-subtitle">Voor organisaties en trajecten</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="pricing-hero-actions">
+                <a class="pricing-hero-button pricing-hero-button-primary" href="#tarieven-overzicht">
+                    <span>Bekijk tarieven</span>
+                    <span class="pricing-hero-button-arrow" aria-hidden="true"></span>
+                </a>
+                <a class="pricing-hero-button pricing-hero-button-secondary" href="contact.html">Stel een vraag</a>
+            </div>
         </section>
 
-        <section class="legal-content pricing-content" aria-label="Tarieven">
-            <div class="pricing-intro">
+        <section class="legal-content pricing-content" id="tarieven-overzicht" aria-label="Tarieven">
+            <div class="pricing-intro" data-route-intro="business" hidden>
                 <p>Ik werk met één helder standaardtraject per product. Dat geeft genoeg ruimte voor een sterke animatie, zonder dat je hoeft te kiezen uit ingewikkelde pakketten. Heeft jouw verhaal, werkwijze of project meer nodig? Dan kun je het traject uitbreiden met aanvullende opties.</p>
             </div>
 
-            <div class="pricing-cards" aria-label="Hoofdtarieven">
-                <div class="pricing-card-shell pricing-card-shell-map">
-                    <article class="pricing-card pricing-card-map">
-                        <div class="pricing-card-header">
-                            <p class="pricing-eyebrow">MAP</p>
-                            <h2>Persoonlijke animatie</h2>
-                            <p class="pricing-price">€999 excl. btw</p>
-                        </div>
+            <div class="pricing-intro" data-route-intro="personal" hidden>
+                <p>Voor privégebruik is er één heldere route: een persoonlijke animatie waarin jouw verhaal wordt vertaald naar beeld, stem en muziek.</p>
+            </div>
 
-                        <p>Voor een persoonlijk verhaal dat zichtbaar, hoorbaar en voelbaar mag worden.</p>
+            <div class="pricing-intro" data-route-intro="sponsor" hidden>
+                <p>Met een sponsorplek maak je een persoonlijke MAP-animatie mogelijk voor iemand die de kosten zelf niet kan dragen. Je kiest hoe zichtbaar je bijdrage mag zijn; de deelnemer houdt altijd de regie over het eigen verhaal.</p>
+            </div>
 
-                        <h3>Inbegrepen:</h3>
-                        <ul class="legal-list pricing-list">
-                            <li>Intake van ongeveer 1 uur</li>
-                            <li>Script op maat</li>
-                            <li>Animatie van ongeveer 2 à 3 minuten</li>
-                            <li>2 unieke plekken of scènes uit jouw verhaal</li>
-                            <li>1 uniek personage, gebaseerd op een echt persoon</li>
-                            <li>Eigen voice-over of AI voice-over</li>
-                            <li>2 muziekopties om samen uit te kiezen</li>
-                            <li>1 revisieronde</li>
-                            <li>Afstemming tijdens het proces</li>
-                            <li>Aandacht voor storytelling, ritme, sfeer en herkenning</li>
-                        </ul>
+            <div class="pricing-route" data-route-panel="business" hidden>
+                <div class="pricing-cards" aria-label="Hoofdtarieven zakelijk">
+                    <div class="pricing-card-shell pricing-card-shell-map">
+                        <article class="pricing-card pricing-card-map">
+                            <div class="pricing-card-header">
+                                <p class="pricing-eyebrow">MAP</p>
+                                <h2>Persoonlijke animatie</h2>
+                                <p class="pricing-price">€999 excl. btw</p>
+                            </div>
 
-                        <p class="pricing-note">Compacte versie mogelijk vanaf €799 excl. btw, bij een korter verhaal met een eenvoudiger visuele uitwerking.</p>
-                    </article>
+                            <p>Voor een persoonlijk verhaal dat zichtbaar, hoorbaar en voelbaar mag worden.</p>
 
-                    <aside class="series-panel series-panel-map" id="map-series-panel" aria-label="MAP pakketten">
-                        <button class="series-tab series-tab-map" type="button" aria-expanded="false" aria-controls="map-series-panel">
-                            <span>Pakket opties</span>
-                        </button>
-                        <div class="series-panel-content">
+                            <h3>Inbegrepen:</h3>
+                            <ul class="legal-list pricing-list">
+                                <li>Intake van ongeveer 1 uur</li>
+                                <li>Script op maat</li>
+                                <li>Animatie van ongeveer 2 à 3 minuten</li>
+                                <li>2 unieke plekken of scènes uit jouw verhaal</li>
+                                <li>1 uniek personage, gebaseerd op een echt persoon</li>
+                                <li>Eigen voice-over of AI voice-over</li>
+                                <li>2 muziekopties om samen uit te kiezen</li>
+                                <li>1 revisieronde</li>
+                                <li>Afstemming tijdens het proces</li>
+                                <li>Aandacht voor storytelling, ritme, sfeer en herkenning</li>
+                            </ul>
+
+                            <p class="pricing-note">Compacte versie mogelijk vanaf €799 excl. btw, bij een korter verhaal met een eenvoudiger visuele uitwerking.</p>
+                        </article>
+
+                        <aside class="series-panel series-panel-map" id="map-series-panel" aria-label="MAP pakketten">
+                            <button class="series-tab series-tab-map" type="button" aria-expanded="false" aria-controls="map-series-panel">
+                                <span>Pakket opties</span>
+                            </button>
+                            <div class="series-panel-content">
+                                <h3>MAP pakketten</h3>
+                                <p>Voor organisaties of trajecten waarin meerdere persoonlijke animaties worden gemaakt.</p>
+                                <ul>
+                                    <li>3 MAP-animaties vanaf €2.850 excl. btw</li>
+                                    <li>6 MAP-animaties vanaf €5.500 excl. btw</li>
+                                    <li>Doorlopend traject op aanvraag</li>
+                                </ul>
+                                <p class="series-panel-note">Reeksen stemmen we altijd vooraf af op inhoud, planning en gewenste mate van maatwerk.</p>
+                            </div>
+                        </aside>
+                    </div>
+
+                    <div class="pricing-card-shell pricing-card-shell-mapx">
+                        <article class="pricing-card pricing-card-mapx">
+                            <div class="pricing-card-header">
+                                <p class="pricing-eyebrow">MAP-X</p>
+                                <h2>Uitleganimatie</h2>
+                                <p class="pricing-price">€999 excl. btw</p>
+                            </div>
+
+                            <p>Voor organisaties, praktijken en professionals die een werkwijze, dienst, methode, project of boodschap helder willen uitleggen.</p>
+
+                            <h3>Inbegrepen:</h3>
+                            <ul class="legal-list pricing-list">
+                                <li>Briefing of intake van ongeveer 1 uur</li>
+                                <li>Script op maat</li>
+                                <li>Animatie van ongeveer 2 minuten, afhankelijk van doel en inhoud</li>
+                                <li>2 unieke plekken, scènes of situaties rond jouw boodschap</li>
+                                <li>1 uniek personage of herkenbare rol</li>
+                                <li>Eigen voice-over of AI voice-over</li>
+                                <li>2 muziekopties om samen uit te kiezen</li>
+                                <li>1 revisieronde</li>
+                                <li>Afstemming op doel, doelgroep en gebruik</li>
+                                <li>Aandacht voor storytelling, helderheid en impact</li>
+                            </ul>
+
+                            <p class="pricing-note">Compacte versie mogelijk vanaf €999 excl. btw, bijvoorbeeld bij een korte uitleganimatie met beperkte afstemming.</p>
+                        </article>
+
+                        <aside class="series-panel series-panel-mapx" id="mapx-series-panel" aria-label="MAP-X pakketten">
+                            <button class="series-tab series-tab-mapx" type="button" aria-expanded="false" aria-controls="mapx-series-panel">
+                                <span>Pakket opties</span>
+                            </button>
+                            <div class="series-panel-content">
+                                <h3>MAP-X pakketten</h3>
+                                <p>Voor meerdere uitleganimaties rond werkwijzen, diensten, methodieken, projecten of boodschappen.</p>
+                                <ul>
+                                    <li>3 MAP-X animaties vanaf €2.850 excl. btw</li>
+                                    <li>6 MAP-X animaties vanaf €5.500 excl. btw</li>
+                                    <li>Doorlopend traject op aanvraag</li>
+                                </ul>
+                                <p class="series-panel-note">Bij MAP-X hangt de prijs af van inhoud, doelgroep, huisstijl en hoeveelheid afstemming.</p>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+
+                <details class="series-mobile">
+                    <summary>Meerdere animaties nodig?</summary>
+                    <div class="series-mobile-grid">
+                        <article class="series-mobile-card series-mobile-card-map">
                             <h3>MAP pakketten</h3>
                             <p>Voor organisaties of trajecten waarin meerdere persoonlijke animaties worden gemaakt.</p>
                             <ul>
@@ -86,43 +204,10 @@
                                 <li>6 MAP-animaties vanaf €5.500 excl. btw</li>
                                 <li>Doorlopend traject op aanvraag</li>
                             </ul>
-                            <p class="series-panel-note">Reeksen stemmen we altijd vooraf af op inhoud, planning en gewenste mate van maatwerk.</p>
-                        </div>
-                    </aside>
-                </div>
+                            <p>Reeksen stemmen we altijd vooraf af op inhoud, planning en gewenste mate van maatwerk.</p>
+                        </article>
 
-                <div class="pricing-card-shell pricing-card-shell-mapx">
-                    <article class="pricing-card pricing-card-mapx">
-                        <div class="pricing-card-header">
-                            <p class="pricing-eyebrow">MAP-X</p>
-                            <h2>Uitleganimatie</h2>
-                            <p class="pricing-price">€999 excl. btw</p>
-                        </div>
-
-                        <p>Voor organisaties, praktijken en professionals die een werkwijze, dienst, methode, project of boodschap helder willen uitleggen.</p>
-
-                        <h3>Inbegrepen:</h3>
-                        <ul class="legal-list pricing-list">
-                            <li>Briefing of intake van ongeveer 1 uur</li>
-                            <li>Script op maat</li>
-                            <li>Animatie van ongeveer 2 minuten, afhankelijk van doel en inhoud</li>
-                            <li>2 unieke plekken, scènes of situaties rond jouw boodschap</li>
-                            <li>1 uniek personage of herkenbare rol</li>
-                            <li>Eigen voice-over of AI voice-over</li>
-                            <li>2 muziekopties om samen uit te kiezen</li>
-                            <li>1 revisieronde</li>
-                            <li>Afstemming op doel, doelgroep en gebruik</li>
-                            <li>Aandacht voor storytelling, helderheid en impact</li>
-                        </ul>
-
-                        <p class="pricing-note">Compacte versie mogelijk vanaf €999 excl. btw, bijvoorbeeld bij een korte uitleganimatie met beperkte afstemming.</p>
-                    </article>
-
-                    <aside class="series-panel series-panel-mapx" id="mapx-series-panel" aria-label="MAP-X pakketten">
-                        <button class="series-tab series-tab-mapx" type="button" aria-expanded="false" aria-controls="mapx-series-panel">
-                            <span>Pakket opties</span>
-                        </button>
-                        <div class="series-panel-content">
+                        <article class="series-mobile-card series-mobile-card-mapx">
                             <h3>MAP-X pakketten</h3>
                             <p>Voor meerdere uitleganimaties rond werkwijzen, diensten, methodieken, projecten of boodschappen.</p>
                             <ul>
@@ -130,45 +215,97 @@
                                 <li>6 MAP-X animaties vanaf €5.500 excl. btw</li>
                                 <li>Doorlopend traject op aanvraag</li>
                             </ul>
-                            <p class="series-panel-note">Bij MAP-X hangt de prijs af van inhoud, doelgroep, huisstijl en hoeveelheid afstemming.</p>
-                        </div>
-                    </aside>
+                            <p>Bij MAP-X hangt de prijs af van inhoud, doelgroep, huisstijl en hoeveelheid afstemming.</p>
+                        </article>
+                    </div>
+                </details>
+
+            </div>
+
+            <div class="pricing-route pricing-route-personal" data-route-panel="personal" hidden>
+                <div class="pricing-cards pricing-cards-personal" aria-label="Hoofdtarief particulier">
+                    <div class="pricing-card-shell pricing-card-shell-personal">
+                        <article class="pricing-card pricing-card-personal">
+                            <div class="pricing-card-header">
+                                <p class="pricing-eyebrow">MAP Persoonlijk</p>
+                                <h2>Persoonlijke animatie</h2>
+                                <p class="pricing-price">€449 incl. btw</p>
+                            </div>
+
+                            <p>Voor wie zelf een persoonlijke animatie wil laten maken. Een persoonlijk verhaal in beeld, stem en muziek, bedoeld voor privégebruik en vrijwillig delen met mensen die belangrijk voor je zijn.</p>
+
+                            <h3>Inbegrepen:</h3>
+                            <ul class="legal-list pricing-list">
+                                <li>Intake van ongeveer 1 uur</li>
+                                <li>Script op maat</li>
+                                <li>Animatie van ongeveer 2 à 3 minuten</li>
+                                <li>2 unieke plekken of scènes uit jouw verhaal</li>
+                                <li>1 uniek personage, gebaseerd op een echt persoon</li>
+                                <li>Eigen voice-over of AI voice-over</li>
+                                <li>2 muziekopties om samen uit te kiezen</li>
+                                <li>1 revisieronde</li>
+                                <li>Persoonlijke afstemming tijdens het proces</li>
+                                <li>Aandacht voor storytelling, ritme, sfeer en herkenning</li>
+                            </ul>
+
+                            <p class="pricing-note">Vraag je dit aan namens een organisatie, project, team of zorgcontext? Dan past de zakelijke MAP-route beter.</p>
+                        </article>
+                    </div>
                 </div>
             </div>
 
-            <details class="series-mobile">
-                <summary>Meerdere animaties nodig?</summary>
-                <div class="series-mobile-grid">
-                    <article class="series-mobile-card series-mobile-card-map">
-                        <h3>MAP pakketten</h3>
-                        <p>Voor organisaties of trajecten waarin meerdere persoonlijke animaties worden gemaakt.</p>
-                        <ul>
-                            <li>3 MAP-animaties vanaf €2.850 excl. btw</li>
-                            <li>6 MAP-animaties vanaf €5.500 excl. btw</li>
-                            <li>Doorlopend traject op aanvraag</li>
-                        </ul>
-                        <p>Reeksen stemmen we altijd vooraf af op inhoud, planning en gewenste mate van maatwerk.</p>
+            <section class="pricing-route pricing-route-sponsor sponsor-section" id="sponsorplekken" data-route-panel="sponsor" hidden aria-labelledby="sponsor-heading">
+                <div class="sponsor-section-header">
+                    <p class="pricing-eyebrow">Sponsorplek</p>
+                    <h2 id="sponsor-heading">Sponsor een MAP-plek</h2>
+                    <p>Met een sponsorplek maak je een persoonlijke MAP-animatie mogelijk voor iemand die de kosten zelf niet kan dragen. Je draagt bij aan maatschappelijke toegang, zonder invloed op het persoonlijke verhaal van de deelnemer.</p>
+                    <p><a class="sponsor-info-link" href="sponsorplek.html">Meer informatie over sponsorplekken</a></p>
+                </div>
+
+                <div class="sponsor-grid" aria-label="Sponsorplekken">
+                    <article class="sponsor-card">
+                        <div class="sponsor-card-header">
+                            <h3>Open sponsorplek anoniem</h3>
+                            <p class="sponsor-price">
+                                <span>€371 excl. btw</span>
+                                <span class="sponsor-price-including">€449 incl. btw</span>
+                            </p>
+                        </div>
+                        <p>Je maakt een open MAP-plek mogelijk. Je kiest geen deelnemer, geen doelgroep en krijgt geen inhoudelijke invloed of informatie over het verhaal.</p>
                     </article>
 
-                    <article class="series-mobile-card series-mobile-card-mapx">
-                        <h3>MAP-X pakketten</h3>
-                        <p>Voor meerdere uitleganimaties rond werkwijzen, diensten, methodieken, projecten of boodschappen.</p>
-                        <ul>
-                            <li>3 MAP-X animaties vanaf €2.850 excl. btw</li>
-                            <li>6 MAP-X animaties vanaf €5.500 excl. btw</li>
-                            <li>Doorlopend traject op aanvraag</li>
-                        </ul>
-                        <p>Bij MAP-X hangt de prijs af van inhoud, doelgroep, huisstijl en hoeveelheid afstemming.</p>
+                    <article class="sponsor-card">
+                        <div class="sponsor-card-header">
+                            <h3>Open sponsorplek met naamvermelding</h3>
+                            <p class="sponsor-price">
+                                <span>€412 excl. btw</span>
+                                <span class="sponsor-price-including">€499 incl. btw</span>
+                            </p>
+                        </div>
+                        <p>Je maakt een open MAP-plek mogelijk en wordt vermeld als sponsor op onze website. Je krijgt geen inhoudelijke invloed of informatie over het verhaal.</p>
+                    </article>
+
+                    <article class="sponsor-card sponsor-card-targeted">
+                        <div class="sponsor-card-header">
+                            <h3>Gerichte sponsorplek</h3>
+                            <p class="sponsor-price">
+                                <span>€599 excl. btw</span>
+                                <span class="sponsor-price-including">€725 incl. btw</span>
+                            </p>
+                        </div>
+                        <p>Je maakt een MAP-plek mogelijk binnen een specifieke doelgroep. Je kiest zelf de doelgroep uit. Je kiest geen specifieke deelnemer en krijgt geen inhoudelijke invloed of informatie over het verhaal.</p>
                     </article>
                 </div>
-            </details>
 
-            <div class="pricing-footer-cta">
+                <p class="sponsor-disclaimer">Wil een organisatie een specifieke persoon aanmelden of de animatie professioneel inzetten? Dan past de zakelijke MAP-route beter.</p>
+            </section>
+
+            <div class="pricing-footer-cta" data-route-after-choice hidden>
                 <p>Twijfel je wat jouw animatie nodig heeft?</p>
                 <a class="pricing-cta" href="contact.html">Neem contact op</a>
             </div>
 
-            <details class="pricing-options" open>
+            <details class="pricing-options" data-route-after-choice data-route-options-section hidden open>
                 <summary>Aanvullende opties</summary>
                 <div class="pricing-options-inner">
                     
@@ -180,50 +317,86 @@
                             <div role="columnheader">Prijs</div>
                         </div>
 
-                        <div class="pricing-options-row" role="row">
+                        <div class="pricing-options-row" data-personal-only hidden role="row">
                             <div role="cell" data-label="Aanvullende optie">Extra unieke plek of scène</div>
-                            <div role="cell" data-label="Wat betekent dit?">Een speciaal gemaakte plek, achtergrond of scène die herkenbaar is voor jouw verhaal, werkwijze of project. Denk aan een woonkamer, werkplek, praktijkruimte, kantoor, teamsetting, processtap of symbolische omgeving.</div>
-                            <div role="cell" data-label="Prijs">+ €150</div>
+                            <div role="cell" data-label="Wat betekent dit?">Een speciaal gemaakte plek, achtergrond of scène die herkenbaar is voor jouw verhaal. Denk aan een woonkamer, werkplek, praktijkruimte, kantoor, teamsetting, processtap of symbolische omgeving.</div>
+                            <div role="cell" data-label="Prijs">+ €150 incl. btw</div>
                         </div>
 
-                        <div class="pricing-options-row" role="row">
+                        <div class="pricing-options-row" data-personal-only hidden role="row">
                             <div role="cell" data-label="Aanvullende optie">Extra uniek personage</div>
                             <div role="cell" data-label="Wat betekent dit?">Een extra personage dat is geïnspireerd op een echt persoon of een herkenbare rol. Denk aan een cliënt, begeleider, collega, familielid, klant, behandelaar of teamlid. Eén uniek personage is standaard inbegrepen.</div>
-                            <div role="cell" data-label="Prijs">+ €125</div>
+                            <div role="cell" data-label="Prijs">+ €125 incl. btw</div>
                         </div>
 
-                        <div class="pricing-options-row" role="row">
+                        <div class="pricing-options-row" data-personal-only hidden role="row">
                             <div role="cell" data-label="Aanvullende optie">Extra minuut animatie</div>
                             <div role="cell" data-label="Wat betekent dit?">Voor animaties die meer ruimte nodig hebben dan de standaardduur. Dit is inclusief extra montage, timing, scènes en afwerking.</div>
-                            <div role="cell" data-label="Prijs">+ €250</div>
+                            <div role="cell" data-label="Prijs">+ €250 incl. btw</div>
                         </div>
 
-                        <div class="pricing-options-row" role="row">
+                        <div class="pricing-options-row" data-personal-only hidden role="row">
                             <div role="cell" data-label="Aanvullende optie">Extra muziekoptie</div>
                             <div role="cell" data-label="Wat betekent dit?">Een extra muziekkeuze of sfeerlaag, bijvoorbeeld wanneer de animatie verschillende hoofdstukken, emoties of overgangen heeft.</div>
-                            <div role="cell" data-label="Prijs">+ €75</div>
+                            <div role="cell" data-label="Prijs">+ €75 incl. btw</div>
                         </div>
 
-                        <div class="pricing-options-row" role="row">
+                        <div class="pricing-options-row" data-personal-only hidden role="row">
                             <div role="cell" data-label="Aanvullende optie">Extra revisieronde</div>
                             <div role="cell" data-label="Wat betekent dit?">Een extra ronde om feedback te verwerken nadat de inbegrepen revisieronde is afgerond.</div>
-                            <div role="cell" data-label="Prijs">+ €150</div>
+                            <div role="cell" data-label="Prijs">+ €125 incl. btw</div>
                         </div>
 
-                        <div class="pricing-options-row" role="row">
+                        <div class="pricing-options-row" data-personal-only hidden role="row">
                             <div role="cell" data-label="Aanvullende optie">Extra intake, overleg of afstemmoment</div>
                             <div role="cell" data-label="Wat betekent dit?">Voor extra verdieping, voorbereiding of overleg, bijvoorbeeld een extra gesprek of afstemming met meerdere betrokkenen.</div>
-                            <div role="cell" data-label="Prijs">+ €95</div>
+                            <div role="cell" data-label="Prijs">+ €95 incl. btw</div>
                         </div>
 
-                        <div class="pricing-options-row" role="row">
+                        <div class="pricing-options-row" data-business-only hidden role="row">
+                            <div role="cell" data-label="Aanvullende optie">Extra unieke plek of scène</div>
+                            <div role="cell" data-label="Wat betekent dit?">Een speciaal gemaakte plek, achtergrond of scène die herkenbaar is voor het verhaal, de werkwijze of het project. Denk aan een woonkamer, werkplek, praktijkruimte, kantoor, teamsetting, processtap of symbolische omgeving.</div>
+                            <div role="cell" data-label="Prijs">vanaf + €150 excl. btw</div>
+                        </div>
+
+                        <div class="pricing-options-row" data-business-only hidden role="row">
+                            <div role="cell" data-label="Aanvullende optie">Extra uniek personage</div>
+                            <div role="cell" data-label="Wat betekent dit?">Een extra personage dat is geïnspireerd op een echt persoon of een herkenbare rol. Denk aan een cliënt, begeleider, collega, familielid, klant, behandelaar of teamlid. Eén uniek personage is standaard inbegrepen.</div>
+                            <div role="cell" data-label="Prijs">vanaf + €125 excl. btw</div>
+                        </div>
+
+                        <div class="pricing-options-row" data-business-only hidden role="row">
+                            <div role="cell" data-label="Aanvullende optie">Extra minuut animatie</div>
+                            <div role="cell" data-label="Wat betekent dit?">Voor animaties die meer ruimte nodig hebben dan de standaardduur. Dit is inclusief extra montage, timing, scènes en afwerking.</div>
+                            <div role="cell" data-label="Prijs">vanaf + €250 excl. btw</div>
+                        </div>
+
+                        <div class="pricing-options-row" data-business-only hidden role="row">
+                            <div role="cell" data-label="Aanvullende optie">Extra muziekoptie</div>
+                            <div role="cell" data-label="Wat betekent dit?">Een extra muziekkeuze of sfeerlaag, bijvoorbeeld wanneer de animatie verschillende hoofdstukken, emoties of overgangen heeft.</div>
+                            <div role="cell" data-label="Prijs">+ €75 excl. btw</div>
+                        </div>
+
+                        <div class="pricing-options-row" data-business-only hidden role="row">
+                            <div role="cell" data-label="Aanvullende optie">Extra revisieronde</div>
+                            <div role="cell" data-label="Wat betekent dit?">Een extra ronde om feedback te verwerken nadat de inbegrepen revisieronde is afgerond.</div>
+                            <div role="cell" data-label="Prijs">+ €150 excl. btw</div>
+                        </div>
+
+                        <div class="pricing-options-row" data-business-only hidden role="row">
+                            <div role="cell" data-label="Aanvullende optie">Extra intake, overleg of afstemmoment</div>
+                            <div role="cell" data-label="Wat betekent dit?">Voor extra verdieping, voorbereiding of overleg, bijvoorbeeld een extra gesprek, projectafstemming of overleg met meerdere betrokkenen.</div>
+                            <div role="cell" data-label="Prijs">+ €150 excl. btw</div>
+                        </div>
+
+                        <div class="pricing-options-row" data-business-only hidden role="row">
                             <div role="cell" data-label="Aanvullende optie">Huisstijl verwerken</div>
                             <div role="cell" data-label="Wat betekent dit?">Denk aan kleuren, logo, tone of voice, organisatiestijl of bestaande communicatiemiddelen.</div>
-                            <div role="cell" data-label="Prijs">vanaf + €250</div>
+                            <div role="cell" data-label="Prijs">vanaf + €250 excl. btw</div>
                         </div>
+
                     </div>
-<br>
-<br>
+
                     <p class="pricing-options-note">Grotere of complexere trajecten kunnen in overleg worden uitgebreid met aanvullende opties of maatwerk.</p>
 
                 </div>
@@ -242,6 +415,67 @@
         const desktopSeriesQuery = window.matchMedia("(min-width: 1620px)");
         const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
         const seriesToggles = document.querySelectorAll(".series-tab");
+        const routeOptions = document.querySelectorAll("[data-route-option]");
+        const routePanels = document.querySelectorAll("[data-route-panel]");
+        const routeIntros = document.querySelectorAll("[data-route-intro]");
+        const routeAfterChoice = document.querySelectorAll("[data-route-after-choice]");
+        const businessOnly = document.querySelectorAll("[data-business-only]");
+        const personalOnly = document.querySelectorAll("[data-personal-only]");
+        const routeOptionsGroup = document.querySelector(".route-options");
+        const pricingRouteNames = ["personal", "sponsor", "business"];
+        const pricingRouteHashes = {
+            personal: "particulier",
+            sponsor: "sponsorplekken",
+            business: "zakelijk"
+        };
+
+        function setPricingRoute(route, updateHash = false) {
+            const nextRoute = pricingRouteNames.includes(route) ? route : "personal";
+
+            routeOptions.forEach((button) => {
+                const isActive = button.dataset.routeOption === nextRoute;
+                button.classList.toggle("is-active", isActive);
+                button.setAttribute("aria-pressed", String(isActive));
+            });
+
+            routePanels.forEach((panel) => {
+                const isActive = panel.dataset.routePanel === nextRoute;
+                panel.hidden = !isActive;
+                panel.classList.toggle("is-active", isActive);
+            });
+
+            routeIntros.forEach((intro) => {
+                intro.hidden = intro.dataset.routeIntro !== nextRoute;
+            });
+
+            routeAfterChoice.forEach((element) => {
+                element.hidden = element.hasAttribute("data-route-options-section") && nextRoute === "sponsor";
+            });
+
+            businessOnly.forEach((element) => {
+                element.hidden = nextRoute !== "business";
+            });
+
+            personalOnly.forEach((element) => {
+                element.hidden = nextRoute !== "personal";
+            });
+
+            routeOptionsGroup?.classList.add("has-choice");
+            routeOptionsGroup?.classList.toggle("is-business", nextRoute === "business");
+            routeOptionsGroup?.classList.toggle("is-personal", nextRoute === "personal");
+            routeOptionsGroup?.classList.toggle("is-sponsor", nextRoute === "sponsor");
+
+            if (nextRoute !== "business") {
+                document.querySelectorAll(".pricing-card-shell.is-series-open").forEach((shell) => {
+                    shell.classList.remove("is-series-open", "is-series-closing", "is-series-settling", "is-series-hover-paused");
+                    shell.querySelector(".series-tab")?.setAttribute("aria-expanded", "false");
+                });
+            }
+
+            if (updateHash && pricingRouteHashes[nextRoute]) {
+                window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}#${pricingRouteHashes[nextRoute]}`);
+            }
+        }
 
         function setMenuOpen(isOpen) {
             if (!siteHeader || !menuButton) {
@@ -260,6 +494,49 @@
 
         navLinks.forEach((link) => {
             link.addEventListener("click", () => setMenuOpen(false));
+        });
+
+        routeOptions.forEach((button) => {
+            button.addEventListener("click", () => {
+                setPricingRoute(button.dataset.routeOption, true);
+            });
+        });
+
+        function getInitialPricingRoute() {
+            if (window.location.hash === "#particulier") {
+                return "personal";
+            }
+
+            if (window.location.hash === "#sponsorplekken" || window.location.hash === "#sponsorplek") {
+                return "sponsor";
+            }
+
+            if (window.location.hash === "#zakelijk") {
+                return "business";
+            }
+
+            return null;
+        }
+
+        const initialPricingRoute = getInitialPricingRoute() || "personal";
+
+        setPricingRoute(initialPricingRoute);
+
+        if (window.location.hash === "#sponsorplekken") {
+            window.requestAnimationFrame(() => {
+                document.querySelector("#sponsorplekken")?.scrollIntoView({
+                    block: "start",
+                    behavior: prefersReducedMotion.matches ? "auto" : "smooth"
+                });
+            });
+        }
+
+        window.addEventListener("hashchange", () => {
+            const pricingRoute = getInitialPricingRoute();
+
+            if (pricingRoute) {
+                setPricingRoute(pricingRoute);
+            }
         });
 
         seriesToggles.forEach((button) => {

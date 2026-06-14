@@ -16,17 +16,26 @@
         </a>
 
         <nav class="nav" id="site-nav" aria-label="Hoofdnavigatie">
-            <a href="persoonlijke-animaties.html">Persoonlijke animaties (MAP)</a>
-            <a class="is-active nav-mapx" href="uitleg-animaties.html">Uitleg animaties (MAP-X)</a>
-            <a href="index.html#voorbeelden">Portfolio</a>
+            <div class="nav-dropdown is-active">
+                <button class="nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                    Onze diensten
+                    <span aria-hidden="true"></span>
+                </button>
+                <div class="nav-dropdown-menu">
+                    <a href="persoonlijke-animaties.html">Persoonlijke animaties (MAP)</a>
+                    <a class="is-active nav-mapx" href="uitleg-animaties.html">Uitleg animaties (MAP-X)</a>
+                </div>
+            </div>
+            <a href="portfolio.html">Portfolio</a>
             <a href="over-mij.html">Over mij</a>
             <a href="tarieven.html">Tarieven</a>
+            <a href="sponsorplek.html">Sponsorplek</a>
             <a href="contact.html">Contact</a>
+            <a class="nav-cta" href="contact.html">Vraag een animatie aan</a>
         </nav>
 
         <div class="header-actions">
             <a class="header-button header-button-ghost" href="veelgestelde-vragen.html">Veelgestelde vragen</a>
-            <a class="header-button header-button-primary" href="contact.html">Vraag een animatie aan</a>
             <button class="menu-button" type="button" aria-label="Menu" aria-controls="site-nav" aria-expanded="false">
                 <span></span>
                 <span></span>
@@ -35,14 +44,22 @@
         </div>
     </header>
 
-    <main class="legal-page">
-        <section class="legal-hero mapx-hero">
-            <p class="section-label"></p>
-            <h1>Uitleganimaties</h1>
-            <p>MAP-X</p>
+    <main class="legal-page mapx-page">
+        <section class="map-hero mapx-hero">
+            <div class="map-hero-copy mapx-hero-copy">
+                <p class="section-label">MAP-X</p>
+                <h1>Uitleganimaties <span>(MAP-X)</span></h1>
+                <p>Heldere animaties voor een helder verhaal. Wij vertalen informatie, processen of idee&euml;n naar visuele animaties die gemakkelijk te begrijpen en te delen zijn. Voor organisaties, methodieken, projecten en meer.</p>
+                <div class="map-hero-actions" aria-label="Vervolgacties">
+                    <a class="map-hero-button map-hero-button-primary" href="contact.html">Bekijk de mogelijkheden <span aria-hidden="true"></span></a>
+                    <a class="map-hero-button map-hero-button-secondary" href="#mapx-uitleg">Lees meer over MAP-X</a>
+                </div>
+            </div>
+
+            <img class="map-hero-illustration mapx-hero-illustration" src="assets/MAPX_hero_illustration.png" alt="" aria-hidden="true">
         </section>
 
-        <section class="legal-content map-content mapx-content" aria-label="MAP-X uitleganimaties">
+        <section class="legal-content map-content mapx-content" id="mapx-uitleg" aria-label="MAP-X uitleganimaties">
             <div class="map-content-grid">
                 <div class="map-side-panel mapx-side-panel">
                     <article>

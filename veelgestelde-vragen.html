@@ -17,17 +17,26 @@
         </a>
 
         <nav class="nav" id="site-nav" aria-label="Hoofdnavigatie">
-            <a href="persoonlijke-animaties.html">Persoonlijke animaties (MAP)</a>
-            <a class="nav-mapx" href="uitleg-animaties.html">Uitleg animaties (MAP-X)</a>
-            <a href="index.html#voorbeelden">Portfolio</a>
+            <div class="nav-dropdown">
+                <button class="nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                    Onze diensten
+                    <span aria-hidden="true"></span>
+                </button>
+                <div class="nav-dropdown-menu">
+                    <a href="persoonlijke-animaties.html">Persoonlijke animaties (MAP)</a>
+                    <a class="nav-mapx" href="uitleg-animaties.html">Uitleg animaties (MAP-X)</a>
+                </div>
+            </div>
+            <a href="portfolio.html">Portfolio</a>
             <a href="over-mij.html">Over mij</a>
             <a href="tarieven.html">Tarieven</a>
+            <a href="sponsorplek.html">Sponsorplek</a>
             <a href="contact.html">Contact</a>
+            <a class="nav-cta" href="contact.html">Vraag een animatie aan</a>
         </nav>
 
         <div class="header-actions">
             <a class="header-button header-button-ghost" href="veelgestelde-vragen.html">Veelgestelde vragen</a>
-            <a class="header-button header-button-primary" href="contact.html">Vraag een animatie aan</a>
             <button class="menu-button" type="button" aria-label="Menu" aria-controls="site-nav" aria-expanded="false">
                 <span></span>
                 <span></span>
@@ -37,13 +46,21 @@
     </header>
 
     <main>
-        <div class="legal-page">
-            <section class="legal-hero">
-                <h1>Veelgestelde vragen</h1>
-                <p>Staat jouw vraag er niet bij? Neem gerust <a href="contact.html">contact op</a>, ik help je graag verder.</p>
+        <div class="legal-page faq-page">
+            <section class="legal-hero faq-hero">
+                <div class="faq-hero-copy">
+                    <p class="section-label">Veelgestelde vragen</p>
+                    <h1>Veelgestelde vragen over MAP</h1>
+                    <p>Hier vind je antwoorden over het proces, de kosten, privacy, gebruiksrechten en wat je kunt verwachten tijdens een animatietraject.</p>
+                    <div class="faq-hero-actions">
+                        <a class="faq-hero-button faq-hero-button-primary" href="contact.html">Stel je eigen vraag <span aria-hidden="true"></span></a>
+                        <a class="faq-hero-button faq-hero-button-secondary" href="index.html" onclick="if (history.length > 1) { history.back(); return false; }">Keer terug</a>
+                    </div>
+                </div>
+                <img class="faq-hero-illustration" src="assets/Veelgestelde Vragen_hero_illustration.png" alt="">
             </section>
 
-            <div class="faq-full">
+            <div class="faq-full" id="veelgestelde-vragen">
                 <div class="faq-list">
                     <details class="faq-item">
                         <summary>Wat is een MAP-animatie precies? <span class="faq-chevron" aria-hidden="true"></span></summary>
@@ -82,7 +99,7 @@
 
                     <details class="faq-item">
                         <summary>Ik heb toestemming gegeven dat mijn animatie als voorbeeld gebruikt mag worden, maar dat wil ik niet meer. Kan ik dat terugdraaien? <span class="faq-chevron" aria-hidden="true"></span></summary>
-                        <p class="faq-body">Absoluut. Jij bent de eigenaar van jouw animatie. Stuur mij een e-mail met jouw wens, en dan pas ik het aan.</p>
+                        <p class="faq-body">Absoluut. Jij houdt de regie over toestemming voor portfolio-gebruik. Stuur mij een e-mail met jouw wens, en dan haal ik het voorbeeld binnen een redelijke termijn uit mijn eigen online kanalen.</p>
                     </details>
 
                     <details class="faq-item">
@@ -117,7 +134,7 @@
 
                     <details class="faq-item">
                         <summary>Wordt mijn animatie openbaar geplaatst? <span class="faq-chevron" aria-hidden="true"></span></summary>
-                        <p class="faq-body">De animatie is jouw eigendom. Jij bepaalt zelf waar je deze plaatst en naar wie je die stuurt. Mijn Animatie Paspoort kan toestemming vragen om gebruik te maken van de animatie in de portfolio. Als je hier toestemming voor hebt gegeven, mag je deze te allen tijde weer intrekken. Stuur daarvoor een e-mail naar info@mijnanimatiepaspoort.nl met als onderwerp: "Intrekken gebruik".</p>
+                        <p class="faq-body">Jij bepaalt zelf of en met wie je jouw persoonlijke animatie deelt. Mijn Animatie Paspoort plaatst jouw animatie alleen in het portfolio als jij daar toestemming voor geeft. Die toestemming mag je later weer intrekken via info@mijnanimatiepaspoort.nl met als onderwerp: "Intrekken gebruik".</p>
                     </details>
 
                     <details class="faq-item">
@@ -180,8 +197,8 @@
 
         <div class="footer-bottom">
             <nav class="footer-links" aria-label="Footer links">
-                <a href="privacyverklaring.html">Privacyverklaring</a>
-                <a href="algemene-voorwaarden.html">Algemene voorwaarden</a>
+                <a href="privacyverklaring.html" target="_blank" rel="noopener noreferrer">Privacyverklaring</a>
+                <a href="algemene-voorwaarden.html" target="_blank" rel="noopener noreferrer">Algemene voorwaarden</a>
             </nav>
             <p>&copy; 2026 Mijn Animatie Paspoort</p>
         </div>
