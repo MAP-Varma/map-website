@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Mijn Animatie Paspoort</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html">
+            <img src="logo.svg" alt="Mijn Animatie Paspoort">
+        </a>
+
+        <nav class="nav" id="site-nav" aria-label="Hoofdnavigatie">
+            <div class="nav-dropdown">
+                <button class="nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                    Onze diensten
+                    <span aria-hidden="true"></span>
+                </button>
+                <div class="nav-dropdown-menu">
+                    <a href="persoonlijke-animaties.html">Persoonlijke animaties (MAP)</a>
+                    <a class="nav-mapx" href="uitleg-animaties.html">Uitleg animaties (MAP-X)</a>
+                </div>
+            </div>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="over-mij.html">Over mij</a>
+            <a href="tarieven.html">Tarieven</a>
+            <a href="sponsorplek.html">Sponsorplek</a>
+            <a class="is-active" href="contact.html">Contact</a>
+            <a class="nav-cta" href="contact.html">Vraag een animatie aan</a>
+        </nav>
+
+        <div class="header-actions">
+            <a class="header-button header-button-ghost" href="veelgestelde-vragen.html">Veelgestelde vragen</a>
+            <button class="menu-button" type="button" aria-label="Menu" aria-controls="site-nav" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="legal-page contact-page">
+        <section class="legal-hero contact-hero">
+            <div class="contact-hero-copy">
+                <p class="section-label">Contact</p>
+                <h1>Neem contact op</h1>
+                <p>Heb je een vraag, idee of wil je samen verkennen wat past? Stuur gerust een bericht. Ik denk graag met je mee.</p>
+                <div class="contact-hero-actions">
+                    <a class="contact-hero-button contact-hero-button-primary" href="#contact-form">Stel je vraag <span aria-hidden="true"></span></a>
+                    <a class="contact-hero-button contact-hero-button-secondary" href="mailto:info@mijnanimatiepaspoort.nl?subject=Kennismaking%20plannen">Plan kennismaking</a>
+                </div>
+            </div>
+            <img class="contact-hero-illustration" src="assets/Contact_hero_illustration.png" alt="">
+        </section>
+
+<section class="contact-form-section" id="contact-form">
+            <div class="contact-form-inner">
+                <div class="contact-form-intro">
+                    <h2>Neem contact op</h2>
+                    <p>Voor elke vraag en aanvragen. Ik denk graag met je mee wat past. Geen verplichtingen.</p>
+                </div>
+                <form class="contact-form" name="contact" method="POST" data-netlify="true" action="/bedankt.html">
+    <input type="hidden" name="form-name" value="contact">
+
+    <div class="contact-form-field">
+        <label for="cf-naam">Naam</label>
+        <input type="text" id="cf-naam" name="naam" placeholder="Jouw naam" required>
+    </div>
+
+    <div class="contact-form-field">
+        <label for="cf-email">E-mail</label>
+        <input type="email" id="cf-email" name="email" placeholder="jouw@email.nl" required>
+    </div>
+
+    <div class="contact-form-field">
+        <label for="cf-telefoon">Telefoonnummer <span class="contact-form-optional">(optioneel)</span></label>
+        <input type="tel" id="cf-telefoon" name="telefoon" placeholder="0612345678">
+    </div>
+
+    <div class="contact-form-field contact-form-field-full">
+        <label for="cf-bericht">Bericht</label>
+        <textarea id="cf-bericht" name="bericht" rows="5" placeholder="Vertel over je (aan)vraag." required></textarea>
+    </div>
+
+    <div class="contact-form-actions">
+        <button type="submit" class="contact-form-submit">Verstuur bericht</button>
+    </div>
+</form>
+            </div>
+        </section>
+
+        <footer class="site-footer" id="contact">
+            <div class="footer-brand">
+                <img src="logo.svg" alt="Mijn Animatie Paspoort">
+            </div>
+
+            <div class="footer-contact">
+                <h2>Neem contact op</h2>
+
+                <dl>
+                    <div>
+                        <dt>Telefoon</dt>
+                        <dd><a href="tel:+31682871751">+31 6 82871751</a></dd>
+                    </div>
+                    <div>
+                        <dt>E-mail</dt>
+                        <dd><a href="mailto:info@mijnanimatiepaspoort.nl">info@mijnanimatiepaspoort.nl</a></dd>
+                    </div>
+                    <div>
+                        <dt>KVK</dt>
+                        <dd>99877759</dd>
+                    </div>
+                </dl>
+            </div>
+
+            <div class="footer-bottom">
+                <nav class="footer-links" aria-label="Footer links">
+                    <a href="privacyverklaring.html" target="_blank" rel="noopener noreferrer">Privacyverklaring</a>
+                    <a href="algemene-voorwaarden.html" target="_blank" rel="noopener noreferrer">Algemene voorwaarden</a>
+                </nav>
+                <p>&copy; 2026 Mijn Animatie Paspoort</p>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        const siteHeader = document.querySelector(".site-header");
+        const menuButton = document.querySelector(".menu-button");
+        const navLinks = document.querySelectorAll(".nav a");
+
+        function setMenuOpen(isOpen) {
+            if (!siteHeader || !menuButton) {
+                return;
+            }
+
+            siteHeader.classList.toggle("is-menu-open", isOpen);
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+        }
+
+        if (menuButton) {
+            menuButton.addEventListener("click", () => {
+                setMenuOpen(!siteHeader.classList.contains("is-menu-open"));
+            });
+        }
+
+        navLinks.forEach((link) => {
+            link.addEventListener("click", () => setMenuOpen(false));
+        });
+
+        
+    </script>
+</body>
+</html>

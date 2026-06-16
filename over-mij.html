@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Over mij | Mijn Animatie Paspoort</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html">
+            <img src="logo.svg" alt="Mijn Animatie Paspoort">
+        </a>
+
+        <nav class="nav" id="site-nav" aria-label="Hoofdnavigatie">
+            <div class="nav-dropdown">
+                <button class="nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                    Onze diensten
+                    <span aria-hidden="true"></span>
+                </button>
+                <div class="nav-dropdown-menu">
+                    <a href="persoonlijke-animaties.html">Persoonlijke animaties (MAP)</a>
+                    <a class="nav-mapx" href="uitleg-animaties.html">Uitleg animaties (MAP-X)</a>
+                </div>
+            </div>
+            <a href="portfolio.html">Portfolio</a>
+            <a class="is-active" href="over-mij.html">Over mij</a>
+            <a href="tarieven.html">Tarieven</a>
+            <a href="sponsorplek.html">Sponsorplek</a>
+            <a href="contact.html">Contact</a>
+            <a class="nav-cta" href="contact.html">Vraag een animatie aan</a>
+        </nav>
+
+        <div class="header-actions">
+            <a class="header-button header-button-ghost" href="veelgestelde-vragen.html">Veelgestelde vragen</a>
+            <button class="menu-button" type="button" aria-label="Menu" aria-controls="site-nav" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="legal-page about-page">
+        <section class="about-hero">
+            <div class="about-hero-copy">
+                <p class="section-label">Over mij</p>
+                <h1>Mijn doel is verbinden</h1>
+                <p>Ik maak animaties met zorg en aandacht, waarin jouw verhaal, identiteit, stem en muziek samenkomen. Zo ontstaat er iets dat mensen helpt om elkaar beter te begrijpen en opnieuw te verbinden.</p>
+                <div class="about-hero-actions" aria-label="Vervolgacties">
+                    <a class="about-hero-button about-hero-button-primary" href="#mijn-verhaal">Lees mijn verhaal <span aria-hidden="true"></span></a>
+                    <a class="about-hero-button about-hero-button-secondary" href="contact.html">Neem contact op</a>
+                </div>
+            </div>
+
+            <img class="about-hero-illustration" src="assets/overmij_Hero_illustration.png" alt="" aria-hidden="true">
+        </section>
+
+        <section class="legal-content about-content" id="mijn-verhaal" aria-label="Over mij">
+            <article>
+                <div class="about-intro">
+                    <div>
+                        <p>Mijn naam is Varma.</p>
+                        <p>Ik ben iemand met een brede nieuwsgierigheid, een creatieve blik en een groot hart voor mensen.</p>
+                        <p>Door de jaren heen ben ik blijven ontdekken en groeien. Niet alleen door wat ik zelf heb meegemaakt, maar vooral door wat ik zie gebeuren bij anderen. In 2019 maakte ik mijn eerste animatie. Dat moment liet me iets belangrijks zien: hoe beeld kan helpen om jezelf beter te begrijpen, grip te krijgen en je verhaal te durven delen.</p>
+                        <p>Sindsdien is creativiteit niet alleen een uitlaatklep, maar ook een manier geworden om mensen te ondersteunen.</p>
+                        <p>Naast MAP werk ik bij Lister, waar ik o.a. creatieve activiteiten doe en als woonondersteuner werk. En vrijwilliger bij ENIK Recovery College in IJsselstein. Daar luister ik naar verhalen, wissel ik ervaringen uit en ben ik er voor mensen op momenten dat het even niet zo lekker gaat.</p>
+                    </div>
+                    <figure class="profile-photo">
+                        <img src="assets/varma-profile.png" alt="Portretfoto van Varma">
+                    </figure>
+                </div>
+            </article>
+
+            <article class="about-highlight">
+                <h2>Wat ik daarin het mooiste vind?</h2>
+                <p>Dat mensen zich gezien voelen. Dat er <span>verbinding</span> ontstaat.</p>
+                <p>Dat ik zie dat mensen vaker terugkeren. Dat iemand zin in het leven krijgt.</p>
+            </article>
+
+            <article class="about-vision">
+                <h2>De visie van Mijn Animatie Paspoort</h2>
+                <p>Het is mijn missie om met MAP mensen met elkaar te verbinden.</p>
+                <p>Soms is het lastig om te laten zien wat er echt in je omgaat. Misschien omdat je te maken hebt gehad met kwetsbaarheid, ontwrichting of ingrijpende ervaringen. Misschien om een andere reden.</p>
+                <p>Door middel van een persoonlijke animatie kun je zichtbaar maken wat jij wilt laten zien. In jouw woorden. Op maat gemaakt. In jouw tempo.</p>
+                <p>Wanneer een verhaal gedeeld wordt en daar erkenning, begrip of verdieping uit ontstaat, groeit er iets wezenlijks tussen mensen.</p>
+                <p>Daar richt Mijn Animatie Paspoort zich op: ruimte creëren voor verhalen die verbinden.</p>
+                <p>Inmiddels bied ik dit ook aan als MAP-X. Ook organisaties hebben een boodschap die zij zorgvuldig willen overbrengen. Een visie, werkwijze, training of methode kan veel betekenen, maar alleen als mensen de kern echt begrijpen en voelen. Met MAP-X help ik organisaties om hun verhaal helder, menselijk en toegankelijk te maken, want ook dat zorgt voor verbinding.</p>
+            </article>
+        </section>
+    </main>
+
+    <script>
+        const siteHeader = document.querySelector(".site-header");
+        const menuButton = document.querySelector(".menu-button");
+        const navLinks = document.querySelectorAll(".nav a");
+
+        function setMenuOpen(isOpen) {
+            if (!siteHeader || !menuButton) {
+                return;
+            }
+
+            siteHeader.classList.toggle("is-menu-open", isOpen);
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+        }
+
+        if (menuButton) {
+            menuButton.addEventListener("click", () => {
+                setMenuOpen(!siteHeader.classList.contains("is-menu-open"));
+            });
+        }
+
+        navLinks.forEach((link) => {
+            link.addEventListener("click", () => setMenuOpen(false));
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Mijn Animatie Paspoort</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html">
+            <img src="logo.svg" alt="Mijn Animatie Paspoort">
+        </a>
+
+        <nav class="nav" id="site-nav" aria-label="Hoofdnavigatie">
+            <div class="nav-dropdown">
+                <button class="nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                    Onze diensten
+                    <span aria-hidden="true"></span>
+                </button>
+                <div class="nav-dropdown-menu">
+                    <a href="persoonlijke-animaties.html">Persoonlijke animaties (MAP)</a>
+                    <a class="nav-mapx" href="uitleg-animaties.html">Uitleg animaties (MAP-X)</a>
+                </div>
+            </div>
+            <a class="is-active" href="portfolio.html">Portfolio</a>
+            <a href="over-mij.html">Over mij</a>
+            <a href="tarieven.html">Tarieven</a>
+            <a href="sponsorplek.html">Sponsorplek</a>
+            <a href="contact.html">Contact</a>
+            <a class="nav-cta" href="contact.html">Vraag een animatie aan</a>
+        </nav>
+
+        <div class="header-actions">
+            <a class="header-button header-button-ghost" href="veelgestelde-vragen.html">Veelgestelde vragen</a>
+            <button class="menu-button" type="button" aria-label="Menu" aria-controls="site-nav" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="legal-page portfolio-page">
+        <section class="legal-hero portfolio-hero">
+            <div class="portfolio-hero-copy">
+                <p class="section-label">Portfolio</p>
+                <h1>Bekijk hoe verhalen tot leven komen</h1>
+                <p>Elke animatie een eigen toon, een uniek verhaal en belangrijke betekenis.</p>
+                <div class="portfolio-hero-actions">
+                    <a class="portfolio-hero-button portfolio-hero-button-primary" href="contact.html">Vraag een animatie aan <span aria-hidden="true"></span></a>
+                    <a class="portfolio-hero-button portfolio-hero-button-secondary" href="veelgestelde-vragen.html">Veelgestelde vragen</a>
+                </div>
+            </div>
+            <img class="portfolio-hero-illustration" src="assets/Portfolio_hero_illustration.png" alt="">
+        </section>
+
+        <section class="portfolio-work" id="portfolio-overzicht">
+            <div class="video-showcase-header">
+                <div class="video-row-header">
+                    <h2>Animaties</h2>
+                    <p>Filter op type animatie of bekijk de volledige selectie.</p>
+                </div>
+
+                <div class="portfolio-filters" aria-label="Filter animaties">
+                    <button class="portfolio-filter is-active" type="button" data-filter="all" aria-pressed="true">Alle</button>
+                    <button class="portfolio-filter portfolio-filter--map" type="button" data-filter="map" aria-pressed="false">Persoonlijke Animatie (MAP)</button>
+                    <button class="portfolio-filter portfolio-filter--mapx" type="button" data-filter="mapx" aria-pressed="false">Uitleganimatie (MAP-X)</button>
+                </div>
+            </div>
+
+            <div class="portfolio-grid" aria-label="Alle animatievoorbeelden">
+                <a class="video-card video-card--new" href="https://youtu.be/ABoxaunvkIc" target="_blank" rel="noopener noreferrer" data-category="map">
+                    <span class="video-thumb">
+                        <span class="video-badge video-badge--new">Nieuw</span>
+                        <img src="https://img.youtube.com/vi/ABoxaunvkIc/maxresdefault.jpg" alt="Thumbnail van animatie">
+                        <span class="video-play" aria-hidden="true"></span>
+                    </span>
+                    <span class="video-card-body">
+                        <span class="video-meta">Persoonlijke Animatie (MAP)</span>
+                        <strong>&ldquo;Niet Ramses met dit of dat, maar gewoon Ramses.&rdquo;</strong>
+                        <span class="video-description">Een persoonlijk verhaal over identiteit, erkenning en gezien worden.</span>
+                    </span>
+                </a>
+
+                <a class="video-card" href="https://youtu.be/Y9TlVVCf2x8" target="_blank" rel="noopener noreferrer" data-category="map">
+                    <span class="video-thumb">
+                        <img src="https://img.youtube.com/vi/Y9TlVVCf2x8/maxresdefault.jpg" alt="Thumbnail van animatie">
+                        <span class="video-play" aria-hidden="true"></span>
+                    </span>
+                    <span class="video-card-body">
+                        <span class="video-meta">Persoonlijke Animatie (MAP)</span>
+                        <strong>&ldquo;Dan voel ik mij gewoon goed, en dat is voor mij het belangrijkst&rdquo;</strong>
+                        <span class="video-description">Over kleine keuzes, eigen regie en wat goed voelen betekent.</span>
+                    </span>
+                </a>
+
+                <a class="video-card" href="https://youtu.be/2z9tdda3HGY?si=ps_qaWMmxiKhoR0S" target="_blank" rel="noopener noreferrer" data-category="map">
+                    <span class="video-thumb">
+                        <img src="https://img.youtube.com/vi/2z9tdda3HGY/maxresdefault.jpg" alt="Thumbnail van persoonlijk animatievoorbeeld 1">
+                        <span class="video-play" aria-hidden="true"></span>
+                    </span>
+                    <span class="video-card-body">
+                        <span class="video-meta">Herstelverhaal &middot; Trimbos Instituut</span>
+                        <strong>Van &ldquo;ik ben mislukt&rdquo; naar &ldquo;ik doe ertoe&rdquo;</strong>
+                        <span class="video-description">Een herstelverhaal over ruimte nemen en opnieuw betekenis vinden.</span>
+                    </span>
+                </a>
+
+                <a class="video-card" href="https://youtu.be/my7-XXYcJ2s?si=fCc3A_tKM1YJvieu" target="_blank" rel="noopener noreferrer" data-category="map">
+                    <span class="video-thumb">
+                        <img src="https://img.youtube.com/vi/my7-XXYcJ2s/maxresdefault.jpg" alt="Thumbnail van persoonlijk animatievoorbeeld 2">
+                        <span class="video-play" aria-hidden="true"></span>
+                    </span>
+                    <span class="video-card-body">
+                        <span class="video-meta">Enik Recovery College</span>
+                        <strong>Je hoeft het niet alleen te doen</strong>
+                        <span class="video-description">Over steun vinden, herstel en samen verder kunnen.</span>
+                    </span>
+                </a>
+
+                <a class="video-card" href="https://youtu.be/aHzMcfUVJuI?si=ZgUUymgt1f_lWbLT" target="_blank" rel="noopener noreferrer" data-category="map">
+                    <span class="video-thumb">
+                        <img src="https://img.youtube.com/vi/aHzMcfUVJuI/maxresdefault.jpg" alt="Thumbnail van persoonlijk animatievoorbeeld 3">
+                        <span class="video-play" aria-hidden="true"></span>
+                    </span>
+                    <span class="video-card-body">
+                        <span class="video-meta">Persoonlijke Animatie (MAP)</span>
+                        <strong>Van isolatie naar verbinding - van overleven naar betekenis</strong>
+                        <span class="video-description">Een persoonlijk verhaal over verbinding, betekenis en opnieuw richting vinden.</span>
+                    </span>
+                </a>
+
+                <a class="video-card video-card--mapx video-card-placeholder" href="uitleg-animaties.html" data-category="mapx">
+                    <span class="video-thumb video-thumb--mapx">
+                        <span class="video-badge video-badge--category video-badge--mapx">MAP-X</span>
+                        <span class="video-thumb-illustration" aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                        <span class="video-play video-play--mapx" aria-hidden="true"></span>
+                    </span>
+                    <span class="video-card-body">
+                        <span class="video-meta video-meta--mapx">Uitleganimatie (MAP-X)</span>
+                        <strong>MAP-X voorbeelden in ontwikkeling</strong>
+                        <span class="video-description">Heldere animaties voor organisaties, methodieken en complexe informatie.</span>
+                    </span>
+                </a>
+            </div>
+        </section>
+
+        <footer class="site-footer" id="contact">
+            <div class="footer-brand">
+                <img src="logo.svg" alt="Mijn Animatie Paspoort">
+            </div>
+
+            <div class="footer-contact">
+                <h2>Neem contact op</h2>
+
+                <dl>
+                    <div>
+                        <dt>Telefoon</dt>
+                        <dd><a href="tel:+31682871751">+31 6 82871751</a></dd>
+                    </div>
+                    <div>
+                        <dt>E-mail</dt>
+                        <dd><a href="mailto:info@mijnanimatiepaspoort.nl">info@mijnanimatiepaspoort.nl</a></dd>
+                    </div>
+                    <div>
+                        <dt>KVK</dt>
+                        <dd>99877759</dd>
+                    </div>
+                </dl>
+            </div>
+
+            <div class="footer-bottom">
+                <nav class="footer-links" aria-label="Footer links">
+                    <a href="privacyverklaring.html" target="_blank" rel="noopener noreferrer">Privacyverklaring</a>
+                    <a href="algemene-voorwaarden.html" target="_blank" rel="noopener noreferrer">Algemene voorwaarden</a>
+                </nav>
+                <p>&copy; 2026 Mijn Animatie Paspoort</p>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        const siteHeader = document.querySelector(".site-header");
+        const menuButton = document.querySelector(".menu-button");
+        const navLinks = document.querySelectorAll(".nav a");
+        const portfolioFilters = document.querySelectorAll(".portfolio-filter");
+        const portfolioCards = document.querySelectorAll(".video-card[data-category]");
+
+        function setMenuOpen(isOpen) {
+            if (!siteHeader || !menuButton) {
+                return;
+            }
+
+            siteHeader.classList.toggle("is-menu-open", isOpen);
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+        }
+
+        if (menuButton) {
+            menuButton.addEventListener("click", () => {
+                setMenuOpen(!siteHeader.classList.contains("is-menu-open"));
+            });
+        }
+
+        navLinks.forEach((link) => {
+            link.addEventListener("click", () => setMenuOpen(false));
+        });
+
+        function setPortfolioFilter(filter) {
+            portfolioCards.forEach((card) => {
+                const isVisible = filter === "all" || card.dataset.category === filter;
+                card.hidden = !isVisible;
+            });
+
+            portfolioFilters.forEach((button) => {
+                const isActive = button.dataset.filter === filter;
+                button.classList.toggle("is-active", isActive);
+                button.setAttribute("aria-pressed", String(isActive));
+            });
+        }
+
+        portfolioFilters.forEach((button) => {
+            button.addEventListener("click", () => setPortfolioFilter(button.dataset.filter || "all"));
+        });
+    </script>
+</body>
+</html>

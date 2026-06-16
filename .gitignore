@@ -1,0 +1,4 @@
+*.psd
+.playwright-browsers/
+.git-store/
+.vscode/

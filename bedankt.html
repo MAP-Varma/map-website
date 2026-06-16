@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bedankt | Mijn Animatie Paspoort</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html">
+            <img src="logo.svg" alt="Mijn Animatie Paspoort">
+        </a>
+
+        <nav class="nav" id="site-nav" aria-label="Hoofdnavigatie">
+            <div class="nav-dropdown">
+                <button class="nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                    Onze diensten
+                    <span aria-hidden="true"></span>
+                </button>
+                <div class="nav-dropdown-menu">
+                    <a href="persoonlijke-animaties.html">Persoonlijke animaties (MAP)</a>
+                    <a class="nav-mapx" href="uitleg-animaties.html">Uitleg animaties (MAP-X)</a>
+                </div>
+            </div>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="over-mij.html">Over mij</a>
+            <a href="tarieven.html">Tarieven</a>
+            <a href="sponsorplek.html">Sponsorplek</a>
+            <a href="contact.html">Contact</a>
+            <a class="nav-cta" href="contact.html">Vraag een animatie aan</a>
+        </nav>
+
+        <div class="header-actions">
+            <a class="header-button header-button-ghost" href="veelgestelde-vragen.html">Veelgestelde vragen</a>
+            <button class="menu-button" type="button" aria-label="Menu" aria-controls="site-nav" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="thank-you-page">
+        <section class="thank-you">
+            <div class="thank-you-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"/>
+                </svg>
+            </div>
+
+            <h1>Je bericht is verstuurd.</h1>
+            <p class="thank-you-lead">Leuk dat je interesse hebt in een animatie!<br>Binnen 5 werkdagen neem ik contact met je op om jouw (aan)vraag te beantwoorden.</p>
+
+            <a href="index.html" class="thank-you-back">Terug naar home</a>
+        </section>
+    </main>
+
+    <script>
+        const siteHeader = document.querySelector(".site-header");
+        const menuButton = document.querySelector(".menu-button");
+        const navLinks = document.querySelectorAll(".nav a");
+
+        function setMenuOpen(isOpen) {
+            if (!siteHeader || !menuButton) return;
+            siteHeader.classList.toggle("is-menu-open", isOpen);
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+        }
+
+        if (menuButton) {
+            menuButton.addEventListener("click", () => {
+                setMenuOpen(!siteHeader.classList.contains("is-menu-open"));
+            });
+        }
+
+        navLinks.forEach((link) => {
+            link.addEventListener("click", () => setMenuOpen(false));
+        });
+    </script>
+</body>
+</html>
