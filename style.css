@@ -2804,6 +2804,7 @@ h3 {
 
 .route-options::before {
     content: "";
+    box-sizing: border-box;
     position: absolute;
     z-index: 0;
     top: 8px;
@@ -4683,25 +4684,7 @@ h3 {
     }
 
     .route-options::before {
-        top: 8px;
-        right: 8px;
-        bottom: auto;
-        left: 8px;
-        width: auto;
-        height: calc((100% - 32px) / 3);
-        transform: translateY(0);
-    }
-
-    .route-options.is-personal::before {
-        transform: translateY(0);
-    }
-
-    .route-options.is-sponsor::before {
-        transform: translateY(calc(100% + 8px));
-    }
-
-    .route-options.is-business::before {
-        transform: translateY(calc(200% + 16px));
+        content: none;
     }
 
     .route-option {
@@ -4714,6 +4697,16 @@ h3 {
         gap: 4px 10px;
         padding: 10px;
         text-align: left;
+    }
+
+    .route-option.is-active {
+        border: 3px solid var(--route-accent);
+        background:
+            linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(255, 242, 248, 0.84)),
+            rgba(255, 255, 255, 0.92);
+        box-shadow:
+            inset 0 0 0 1px rgba(255, 255, 255, 0.88),
+            0 14px 30px rgba(117, 97, 211, 0.16);
     }
 
     .pricing-hero-option:not(:last-child)::after {
