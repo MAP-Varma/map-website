@@ -24,6 +24,38 @@
     --shadow: 0 24px 70px rgba(67, 38, 108, 0.18);
 }
 
+.hero-picture {
+    aspect-ratio: 1402 / 1122;
+}
+
+.map-hero-illustration {
+    aspect-ratio: 1672 / 941;
+}
+
+.mapx-hero-illustration {
+    aspect-ratio: 1746 / 901;
+}
+
+.portfolio-hero-illustration {
+    aspect-ratio: 1655 / 950;
+}
+
+.about-hero-illustration {
+    aspect-ratio: 1537 / 1023;
+}
+
+.sponsor-hero-illustration {
+    aspect-ratio: 2172 / 724;
+}
+
+.contact-hero-illustration {
+    aspect-ratio: 900 / 592;
+}
+
+.faq-hero-illustration {
+    aspect-ratio: 1882 / 836;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -5492,6 +5524,10 @@ h3 {
 
     background-color: #fbfaff;
     background-image: url('assets/Voorbeelden_banner_background.png');
+    background-image: image-set(
+        url('assets/banner-v1/Voorbeelden_banner_background-1400.webp') type('image/webp'),
+        url('assets/Voorbeelden_banner_background.png') type('image/png')
+    );
     background-repeat: no-repeat;
     background-position: center top;
 
@@ -5510,11 +5546,40 @@ h3 {
     width: clamp(400px, 34vw, 520px);
     aspect-ratio: 1448 / 1086;
     background-image: url('assets/Voorbeelden_banner_illustration.png');
+    background-image: image-set(
+        url('assets/banner-v1/Voorbeelden_banner_illustration-960.webp') type('image/webp'),
+        url('assets/Voorbeelden_banner_illustration.png') type('image/png')
+    );
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
     pointer-events: none;
     transform: translateY(-50%);
+}
+
+@media (max-width: 1180px) {
+    .examples-header {
+        background-image: image-set(
+            url('assets/banner-v1/Voorbeelden_banner_background-960.webp') type('image/webp'),
+            url('assets/Voorbeelden_banner_background.png') type('image/png')
+        );
+    }
+}
+
+@media (max-width: 680px) {
+    .examples-header {
+        background-image: image-set(
+            url('assets/banner-v1/Voorbeelden_banner_background-640.webp') type('image/webp'),
+            url('assets/Voorbeelden_banner_background.png') type('image/png')
+        );
+    }
+
+    .examples-header::after {
+        background-image: image-set(
+            url('assets/banner-v1/Voorbeelden_banner_illustration-640.webp') type('image/webp'),
+            url('assets/Voorbeelden_banner_illustration.png') type('image/png')
+        );
+    }
 }
 
 .examples-copy,

@@ -67,7 +67,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
 
-            <img class="map-hero-illustration mapx-hero-illustration" src="assets/MAPX_hero_illustration.png" alt="" aria-hidden="true">
+            <picture class="hero-picture-source">
+                <source type="image/webp"
+                        srcset="assets/hero-v1/MAPX_hero_illustration-640.webp 640w, assets/hero-v1/MAPX_hero_illustration-960.webp 960w, assets/hero-v1/MAPX_hero_illustration-1400.webp 1400w"
+                        sizes="(max-width: 620px) 120vw, (max-width: 860px) 108vw, (max-width: 1180px) 50vw, 48vw">
+                <img class="map-hero-illustration mapx-hero-illustration" src="assets/MAPX_hero_illustration.png" alt="" aria-hidden="true" width="1746" height="901" fetchpriority="high">
+            </picture>
         </section>
 
         <section class="legal-content map-content mapx-content" id="mapx-uitleg" aria-label="MAP-X uitleganimaties">

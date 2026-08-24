@@ -68,7 +68,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <a class="faq-hero-button faq-hero-button-secondary" href="index.html" onclick="if (history.length > 1) { history.back(); return false; }">Keer terug</a>
                     </div>
                 </div>
-                <img class="faq-hero-illustration" src="assets/Veelgestelde Vragen_hero_illustration.png" alt="">
+                <picture class="hero-picture-source">
+                    <source type="image/webp"
+                            srcset="assets/hero-v1/Veelgestelde%20Vragen_hero_illustration-640.webp 640w, assets/hero-v1/Veelgestelde%20Vragen_hero_illustration-960.webp 960w, assets/hero-v1/Veelgestelde%20Vragen_hero_illustration-1400.webp 1400w"
+                            sizes="(max-width: 620px) 118vw, (max-width: 860px) 105vw, (max-width: 1180px) 50vw, 43vw">
+                    <img class="faq-hero-illustration" src="assets/Veelgestelde Vragen_hero_illustration.png" alt="" width="1882" height="836" fetchpriority="high">
+                </picture>
             </section>
 
             <div class="faq-full" id="veelgestelde-vragen">

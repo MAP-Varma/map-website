@@ -77,7 +77,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
 
             <div class="hero-visual" aria-hidden="true">
-                <img class="hero-picture" src="assets/Hero_picture.png" alt="">
+                <picture class="hero-picture-source">
+                    <source type="image/webp"
+                            srcset="assets/hero-v1/Hero_picture-640.webp 640w, assets/hero-v1/Hero_picture-960.webp 960w, assets/hero-v1/Hero_picture-1400.webp 1400w"
+                            sizes="(max-width: 860px) 100vw, (max-width: 1180px) 46vw, 42vw">
+                    <img class="hero-picture" src="assets/Hero_picture.png" alt="" width="1402" height="1122" fetchpriority="high">
+                </picture>
             </div>
         </section>
         </div>
@@ -157,7 +162,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <a class="video-card video-card--new" href="https://www.youtube.com/watch?v=0gTHtS2xmcU&amp;vq=hd1080" target="_blank" rel="noopener noreferrer" data-category="map">
                             <span class="video-thumb">
                                 <span class="video-badge video-badge--new">Nieuw</span>
-                                <img src="https://img.youtube.com/vi/0gTHtS2xmcU/hqdefault.jpg" alt="Thumbnail van nieuwe animatie">
+                                <img src="https://img.youtube.com/vi/0gTHtS2xmcU/hqdefault.jpg" alt="Thumbnail van nieuwe animatie" loading="lazy" decoding="async">
                                 <span class="video-play" aria-hidden="true"></span>
                             </span>
                             <span class="video-card-body">
@@ -169,7 +174,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                         <a class="video-card" href="https://youtu.be/ABoxaunvkIc" target="_blank" rel="noopener noreferrer" data-category="map">
                             <span class="video-thumb">
-                                <img src="https://img.youtube.com/vi/ABoxaunvkIc/maxresdefault.jpg" alt="Thumbnail van animatie">
+                                <img src="https://img.youtube.com/vi/ABoxaunvkIc/maxresdefault.jpg" alt="Thumbnail van animatie" loading="lazy" decoding="async">
                                 <span class="video-play" aria-hidden="true"></span>
                             </span>
                             <span class="video-card-body">
@@ -181,7 +186,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                         <a class="video-card" href="https://youtu.be/Y9TlVVCf2x8" target="_blank" rel="noopener noreferrer" data-category="map">
                             <span class="video-thumb">
-                                <img src="https://img.youtube.com/vi/Y9TlVVCf2x8/maxresdefault.jpg" alt="Thumbnail van animatie">
+                                <img src="https://img.youtube.com/vi/Y9TlVVCf2x8/maxresdefault.jpg" alt="Thumbnail van animatie" loading="lazy" decoding="async">
                                 <span class="video-play" aria-hidden="true"></span>
                             </span>
                             <span class="video-card-body">

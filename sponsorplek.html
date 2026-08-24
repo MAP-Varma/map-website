@@ -68,7 +68,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
 
-            <img class="sponsor-hero-illustration" src="assets/Sponsor_hero_illustration2.png" alt="" aria-hidden="true">
+            <picture class="hero-picture-source">
+                <source type="image/webp"
+                        srcset="assets/hero-v1/Sponsor_hero_illustration2-640.webp 640w, assets/hero-v1/Sponsor_hero_illustration2-960.webp 960w, assets/hero-v1/Sponsor_hero_illustration2-1400.webp 1400w"
+                        sizes="(max-width: 520px) 142vw, (max-width: 860px) 128vw, (max-width: 1180px) 68vw, 61vw">
+                <img class="sponsor-hero-illustration" src="assets/Sponsor_hero_illustration2.png" alt="" aria-hidden="true" width="2172" height="724" fetchpriority="high">
+            </picture>
         </section>
 
         <section class="legal-content sponsor-info-content" id="sponsor-uitleg" aria-label="Sponsorplekken uitgelegd">

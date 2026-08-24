@@ -67,7 +67,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
 
-            <img class="about-hero-illustration" src="assets/overmij_Hero_illustration.png" alt="" aria-hidden="true">
+            <picture class="hero-picture-source">
+                <source type="image/webp"
+                        srcset="assets/hero-v1/overmij_Hero_illustration-640.webp 640w, assets/hero-v1/overmij_Hero_illustration-960.webp 960w, assets/hero-v1/overmij_Hero_illustration-1400.webp 1400w"
+                        sizes="(max-width: 620px) 118vw, (max-width: 860px) 112vw, (max-width: 1180px) 54vw, 51vw">
+                <img class="about-hero-illustration" src="assets/overmij_Hero_illustration.png" alt="" aria-hidden="true" width="1537" height="1023" fetchpriority="high">
+            </picture>
         </section>
 
         <section class="legal-content about-content" id="mijn-verhaal" aria-label="Over mij">
@@ -81,7 +86,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <p>Naast MAP werk ik bij Lister, waar ik o.a. creatieve activiteiten doe en als woonondersteuner werk. En vrijwilliger bij ENIK Recovery College in IJsselstein. Daar luister ik naar verhalen, wissel ik ervaringen uit en ben ik er voor mensen op momenten dat het even niet zo lekker gaat.</p>
                     </div>
                     <figure class="profile-photo">
-                        <img src="assets/varma-profile.png" alt="Portretfoto van Varma">
+                        <img src="assets/varma-profile.png" alt="Portretfoto van Varma" loading="lazy" decoding="async">
                     </figure>
                 </div>
             </article>

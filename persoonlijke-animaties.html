@@ -67,7 +67,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
 
-            <img class="map-hero-illustration" src="assets/MAP_hero_illustration.png" alt="" aria-hidden="true">
+            <picture class="hero-picture-source">
+                <source type="image/webp"
+                        srcset="assets/hero-v1/MAP_hero_illustration-640.webp 640w, assets/hero-v1/MAP_hero_illustration-960.webp 960w, assets/hero-v1/MAP_hero_illustration-1400.webp 1400w"
+                        sizes="(max-width: 620px) 120vw, (max-width: 860px) 108vw, (max-width: 1180px) 50vw, 43vw">
+                <img class="map-hero-illustration" src="assets/MAP_hero_illustration.png" alt="" aria-hidden="true" width="1672" height="941" fetchpriority="high">
+            </picture>
         </section>
 
         <section class="legal-content map-content" id="map-uitleg" aria-label="Persoonlijke animaties">
